@@ -5,7 +5,7 @@
 ## Description 
 The project provided an interactive teaching tool that allowed a more versatile solution to building and solving the problems within the context of maximum flow minimum cut thereom, giving appropiate solutions, enabling benefits both from a teaching perspective and as a student resource.
 
-The project creates an interactive GUI where the user can:  
+#### The project creates an interactive GUI where the user can:  
 
 - Build a directed graph with initial states (sources) and finishing states (sinks) using a custom GUI with Pygame.  
 - Determine the maximum flow that could be sent through the graph at any one time, obeying the capacities of each edge.  
@@ -15,7 +15,7 @@ The project creates an interactive GUI where the user can:
 - Include node capacities to show that a node can have a limiting capacity within itself, not just its edges.  
 - Evaluate the maximum flow as the lower bound and compare this with the minimum cut as the upper bound to find the optimal flow.  
 
-### Other key features  
+##### Other key features  
  
 - Allows the user to hide and show supersources/supersinks/node capacities and cuts to enable a more specifc focus on certain elements of the graph.  
 - Creates a double outlined node to identify sources/sinks/supersources and supersinks.  
