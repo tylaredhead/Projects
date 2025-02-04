@@ -5,8 +5,8 @@
 ## Description 
 The project provided an interactive teaching tool that allowed a more versatile solution to building and solving the problems within the context of maximum flow minimum cut thereom, giving appropiate solutions, enabling benefits both from a teaching perspective and as a student resource.
 
-This project creates an interactive GUI where the user can:
-    -Build a directed graph with initial states (sources) and finishing states (sinks) using a custom GUI using pygame
+This project creates an interactive GUI where the user can
+        -Build a directed graph with initial states (sources) and finishing states (sinks) using a custom GUI using pygame
     -Determine the maximum flow that could be sent through the graph at any one time, obeying to the capacities of each edge.
     -Enables the use to draw their own cuts on the graph and displaying the analysis depending on the collision between edges.
     -Copes with edges having a minimum capacity that must be sent through graphs.
