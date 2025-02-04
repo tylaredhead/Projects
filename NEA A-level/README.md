@@ -5,14 +5,15 @@
 ## Description 
 The project provided an interactive teaching tool that allowed a more versatile solution to building and solving the problems within the context of maximum flow minimum cut thereom, giving appropiate solutions, enabling benefits both from a teaching perspective and as a student resource.
 
-This project creates an interactive GUI where the user can:  
-        -Build a directed graph with initial states (sources) and finishing states (sinks) using a custom GUI using pygame.  
-    -Determine the maximum flow that could be sent through the graph at any one time, obeying to the capacities of each edge.  
-    -Enables the use to draw their own cuts on the graph and displaying the analysis depending on the collision between edges.  
-    -Copes with edges having a minimum capacity that must be sent through graphs.  
-    -Add supersources and supersinks as a visual aid for when there are multiple sources and sinks, dynamically finding a position without collision allocating associated egdes.  
-    -Adds a node capacity as visual aid to show that a node can have a limiting capacity within itself rather than just the egdes.  
-    -Evaluates the maximum flow as the lower bound and compares this with the minimum cut as the upper bound to find the optimal flow.  
+### The project creates an interactive GUI where the user can:  
+
+- Build a directed graph with initial states (sources) and finishing states (sinks) using a custom GUI with Pygame.  
+- Determine the maximum flow that could be sent through the graph at any one time, obeying the capacities of each edge.  
+- Enable the user to draw their own cuts on the graph and display analysis depending on collisions between edges.  
+- Handle edges with a minimum capacity that must be sent through the graph.  
+- Add supersources and supersinks as a visual aid for multiple sources and sinks, dynamically positioning them without collision and allocating associated edges.  
+- Include node capacities to show that a node can have a limiting capacity within itself, not just its edges.  
+- Evaluate the maximum flow as the lower bound and compare this with the minimum cut as the upper bound to find the optimal flow.  
 
 ### Other key features  
 
