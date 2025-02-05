@@ -39,12 +39,28 @@ If this is not installed, this below code should work on windows and linux depen
 The pygame framework was used over others such as Tkinter due to the real time user interaction when drawing cuts. Although this means the screen will refresh constantly, however this enables the user to experiment with a range of cuts to further increase there understanding.  
 Although tkinter has more accessible GUI features such as scrollbar unlike pygame, resulting a custom GUI interface, this meant i could configure buttons and scrollbars to a specific use case, allowing greater versatility.
 
-Challenge and future features
+## Challenges and future features
 
-What did you learn
+- COllisions ==> Although pygame has inbuilt collision detection for images, due to image boxes of the egdes covering a much greater area that the shown edges as well as the rotation and scaling, this meant detection had to be custom built for 4 scenarios:
+    1. New node colliding with existing node
+    2. New node colliding with existing edge
+    3. New edge colliding with existing node
+    4. New edge colliding with existing edge  
+    In future updates, a cache generator may be used to further improve performance at collision detection or the images could be replaced with shapes (e.g rectangles) to utilise the inbuilt collision detection within the pygame framework.
+
+
+/Have ability to save and load graphs as well as colliison detection using cache and highlight specific paths /edges when clicked
+
+## What did you learn
+
+1. Importance of scalability
+2. Importance of user preferences
+3. Managing and debugging on larger codebase
+4. Deepened own knowledge 
+5. Pygame 
 
 Conclusion 
 
-Images
-<img src="Program-GraphBuilding.png" alt="An image showing the graph being built" style="width:40%; height:auto;">
-<img src="Program-Full.png" alt="n image showing the maximum flows and minimum cuts" style="width:40%; height:auto;">
+Does this focus on main features of the project
+<img src="Program-GraphBuilding.png" alt="An image showing the graph being built" style="width:45%; height:auto;">
+<img src="Program-Full.png" alt="n image showing the maximum flows and minimum cuts" style="width:45%; height:auto;">
