@@ -31,7 +31,7 @@ From doing further maths myself, i found little resources online for maximum flo
 ## How to use the project? 
 This projects acts as a tool to create and validate your answers for each graph made. This can be run through the NetworkFlows10.py file if pygame is installed within the IDE.
 If this is not installed, this below code should work on windows and linux depending on your configurations:  
-<center> pip install pygame </center>
+`pip install pygame`
 
 
 ## Specific technologies
