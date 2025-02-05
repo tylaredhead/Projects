@@ -33,7 +33,6 @@ This projects acts as a tool to create and validate your answers for each graph 
 If this is not installed, this below code should work on windows and linux depending on your configurations:  
 `pip install pygame`
 
-
 ## Specific technologies
 
 The pygame framework was used over others such as Tkinter due to the real time user interaction when drawing cuts. Although this means the screen will refresh constantly, however this enables the user to experiment with a range of cuts to further increase there understanding.  
@@ -41,26 +40,28 @@ Although tkinter has more accessible GUI features such as scrollbar unlike pygam
 
 ## Challenges and future features
 
-- COllisions ==> Although pygame has inbuilt collision detection for images, due to image boxes of the egdes covering a much greater area that the shown edges as well as the rotation and scaling, this meant detection had to be custom built for 4 scenarios:
+- Maintaining and debugging ==> As this was my first project with such a large code base, testing was initially done at the end of a segment of coding, which could be fairly time consuming. This was solved by both using a debugger through vscode as well as testing each function in isolation before testing the function as part of the system. 
+
+- Collisions ==> Although pygame has inbuilt collision detection for images, due to image boxes of the egdes covering a much greater area that the shown edges as well as the rotation and scaling, this meant detection had to be custom built for 4 scenarios:
     1. New node colliding with existing node
     2. New node colliding with existing edge
     3. New edge colliding with existing node
     4. New edge colliding with existing edge  
-    In future updates, a cache generator may be used to further improve performance at collision detection or the images could be replaced with shapes (e.g rectangles) to utilise the inbuilt collision detection within the pygame framework.
 
+In future updates, a cache generator may be used to further improve performance at collision detection or the images could be replaced with shapes (e.g rectangles) to utilise the inbuilt collision detection within the pygame framework.
 
-/Have ability to save and load graphs as well as colliison detection using cache and highlight specific paths /edges when clicked
+Other future features include:  
+- Being able to highlight a path as it is being added to the scrollbar in the bottom left as well as once the path has been displayed, changing the colours. This would enable a greater isolation of certain parts of the graph, which coupled with a similiar idea for individual edges, may allow a greater clarity when working on larger graphs.
+- Enable the ability to load and save data using a database to enable quicker set-up of graphs, allowing greater time efficiency. This would probably be implemented using sqlite3 using a normalised relational database.
 
 ## What did you learn
 
-1. Importance of scalability
-2. Importance of user preferences
-3. Managing and debugging on larger codebase
-4. Deepened own knowledge 
-5. Pygame 
+1. Importance of scalability and versatility within the design
+2. Importance of user preferences, improving my communication with clients particularly in regards to the user interface elements
+3. Managing and debugging on a larger codebase
+4. Deepened own knowledge on a range of data structures algorithms such as queues and DFS, concepts of OOP and the pygame framework. 
 
-Conclusion 
-
-Does this focus on main features of the project
 <img src="Program-GraphBuilding.png" alt="An image showing the graph being built" style="width:45%; height:auto;">
 <img src="Program-Full.png" alt="n image showing the maximum flows and minimum cuts" style="width:45%; height:auto;">
+
+Does this focus on main features of the project?
