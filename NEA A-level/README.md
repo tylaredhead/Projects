@@ -46,5 +46,6 @@ What did you learn
 Conclusion 
 
 Images
-![An image showing the graph being built](Program-GraphBuilding.png "A graph being built"){:height="36px" width="36px"}
+<img src="Program-GraphBuilding.png" alt="An image showing the graph being built" style="width:50%; height:auto;">
+![An image showing the graph being built](Program-GraphBuilding.png "A graph being built")
 ![An image showing the maximum flows and minimum cuts](Program-Full.png "A graph with the maximum flows and minimum cuts visible"){width=50%}
