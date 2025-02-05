@@ -25,7 +25,7 @@ From doing further maths myself, i found little resources online for maximum flo
     - Buttons which either have a single purpose or become multi-phase.  
 - Collision detection algorithms to check for collisions between nodes and edges.  
 - Built the algorithm for maximum flow and minimum cut aspects of the solution from scratch, in particular using the intersection between a cut and edge to determine invalid cuts and the side at which the node lies (either the source or sink side). The maximum flows was also revealed in a step by step manner, allowing greater focus on each individual path. 
- 
+- Use multi coloured cuts as well as highlighting the back flow when 0, enabling a focus on a specific part.
 **For a more detailed explanation of the project, see the write up folder.**
 
 ## How to use the project? 
@@ -46,4 +46,5 @@ What did you learn
 Conclusion 
 
 Images
-![An image showing the graph being built](Program-GraphBuilding.png "A graph being built")
+![An image showing the graph being built](Program-GraphBuilding.png "A graph being built"){width=50%}
+![An image showing the maximum flows and minimum cuts](Program-Full.png "A graph with the maximum flows and minimum cuts visible"){width=50%}
