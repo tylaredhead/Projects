@@ -46,3 +46,4 @@ What did you learn
 Conclusion 
 
 Images
+![An image showing the graph being built](Program-GraphBuilding.png "A graph being built")
