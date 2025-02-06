@@ -26,7 +26,7 @@ From doing further maths myself, i found little resources online for maximum flo
 - Collision detection algorithms to check for collisions between nodes and edges.  
 - Built the algorithm for maximum flow and minimum cut aspects of the solution from scratch, in particular using the intersection between a cut and edge to determine invalid cuts and the side at which the node lies (either the source or sink side). The maximum flows was also revealed in a step by step manner, allowing greater focus on each individual path. 
 - Use multi coloured cuts as well as highlighting the back flow when 0, enabling a focus on a specific part.  
-**For a more detailed explanation of the project, see the write up folder** [here](/NEA%20A-level/Write%20Up)
+**For a more detailed explanation of the project, see the write up folder** [here](/NEA A-level/Write Up)
 
 ## How to use the project? 
 This projects acts as a tool to create and validate your answers for each graph made. This can be run through the NetworkFlows10.py file if pygame is installed within the IDE.
