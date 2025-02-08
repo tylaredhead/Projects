@@ -73,18 +73,18 @@ In terms of functionality, this is very similiar to version 1 with all features 
 #### Structure for txt files
 The structure of the file is layered so the player is defined, followed by the map, before each room with everything within directly beneath it. At the bottom, the combine items are defined followed by the conditions and then the bonus. An example is:
 
-`player:<player name>
-map:<map id>
-room:<id>,<name>,<description>,<hidden>
-    equipment:<id>,<name>,<description>,<hidden>,<use action>,<use target>,<use result>,<use description>
-    container:<id>,<name>,<description>,<hidden>
-    item:<id>,<name>,<description>,<hidden>
-    exit:<id>,<name>,<description>,<next room>,<hidden>
-combine:<item id 1>,<item id 2>,<equipment id>,<equipment  name>,<equipment description>,<equipment hidden>,<equipment use action>,<equipment use target>,<equipment use result>,<equipment use description>
-combine:<item id 1>,<item id 2>,<item id 3>,<item  name>,<item description>,<item hidden>
-condition:<room id>,<command>=<display description>
-condition:<room id>,<display description>
-bonus:<score>,<item id 1>,<item id 2>,...`
+`player:<player name>  
+map:<map id>  
+room:<id>,<name>,<description>,<hidden>  
+    equipment:<id>,<name>,<description>,<hidden>,<use action>,<use target>,<use result>,<use description>  
+    container:<id>,<name>,<description>,<hidden>  
+    item:<id>,<name>,<description>,<hidden>  
+    exit:<id>,<name>,<description>,<next room>,<hidden>  
+combine:<item id 1>,<item id 2>,<equipment id>,<equipment  name>,<equipment description>,<equipment hidden>,<equipment use action>,<equipment use target>,<equipment use result>,<equipment use description>  
+combine:<item id 1>,<item id 2>,<item id 3>,<item  name>,<item description>,<item hidden>  
+condition:<room id>,<command>=<display description>  
+condition:<room id>,<display description>  
+bonus:<score>,<item id 1>,<item id 2>, ...`
 
 All inputs are strings barring hidden which acts as a boolean so must be true or false, with **,** acting as delimiters.
 
