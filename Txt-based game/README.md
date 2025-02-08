@@ -13,32 +13,30 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 </tr>
 <tr>
 <td>
-```json
-- move <direction> 
-- look || look <feature> || look <item> 
+- move &lt;direction&gt; 
+- look || look &lt;feature&gt; || look &lt;item&gt; 
 - inventory
 - score 
 - map 
-- search <feature> 
-- wear <item> 
-- open <feature> 
+- search &lt;feature&gt; 
+- wear &lt;item&gt; 
+- open &lt;feature&gt; 
 - hint 
 - cut 
 - quit 
-```
 </td>
 <td>
 
 
-- drop <item> || drop <equipment>
-- get <item> || get <equipment>
-- help || help <command>
-- look room || look <exit> || look <feature> || look <item> || look <equipment> 
-- move <direction>
+- drop &lt;item&gt; || drop &lt;equipment&gt;
+- get &lt;item&gt; || get &lt;equipment&gt;
+- help || help &lt;command&gt;
+- look room || look &lt;exit&gt; || look &lt;feature&gt; || look &lt;item&gt; || look &lt;equipment&gt; 
+- move &lt;direction&gt;
 - quit 
-- status <player> || status <inventory> || status <item> || status <equipment> || status <map> || status score
-- use <equipment> || use <equipment> on <feature>
-- combine <item> with <item> ==> creates an item or equipment
+- status &lt;player&gt; || status &lt;inventory&gt; || status &lt;item&gt; || status &lt;equipment&gt; || status &lt;map&gt; || status score
+- use &lt;equipment&gt; || use &lt;equipment&gt; on &lt;feature&gt;
+- combine &lt;item&gt; with &lt;item&gt; ==> creates an item or equipment
 
 </td>
 </tr></table>
