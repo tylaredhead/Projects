@@ -1,5 +1,6 @@
 from random import randint
 from copy import deepcopy
+import os
 
 def findEmptyLocations(sudoko, coords):
     for rowIdx in range(9):
