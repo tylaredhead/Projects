@@ -97,7 +97,8 @@ In terms of the challenges from version 1, due to the code being distributed int
 Due to the large number of possible permutations of a `.txt` file that are valid , i initially restricted it to the specific format shown within [Structure for txt files](#structure-for-txt-files), however the game format was still restrictive. To allow more versatility of games being played, i added the feature to have an option to add conditions that would execute a command and output text, allowing greater variety.
  
 ## What did you learn
-1. The importance of scalability initially even from the design stage, evident with the different structure implementations of the code between version 1 and 2. This, combinied with debugging being less time consuming when functions are initially tested in isolation before being integrated.
-2. Object orientated programming approach utilising interfaces, inheritance, composition and ENUM constants .
+1. The importance of scalability initially even from the design stage, evident with the different structure implementations of the code between version 1 and 2. 
+2. Time efficiency when debugging as functions are initially tested in isolation before being integrated.
+2. Object orientated programming approach utilising interfaces, inheritance, composition and ENUM constants.
 3. The use of libraries to read txt files.
 4. Deepened own knowledge on a range of data structures and algorithms such as hash maps and BFS.
