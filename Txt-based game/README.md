@@ -2,32 +2,77 @@
 
 ## Overall description 
 An interactive text based game using object orientated programming with 2 versions:
-- [Version 1](#version-1): A score based game where the aim was to get the medallion and move it to the beach filled with them with the aim to get the highest score. Access to the code is [here](/Txt-based%20game/Version%201/)
-- [Version 2](#version-2): A score based game where the machine can read in any text file obeying to a certain structure and enable the user to play each game. Access to the code is [here](/Txt-based%20game/Version%202/)
+- [Version 1](#version-1): A score based game where the aim was to get the medallion and move it to the beach filled with them with the aim to get the highest score. Access to the code is [here](/Txt-based%20game/Version%201/).
+- [Version 2](#version-2): A score based game where the machine can read in any text file obeying to a certain structure and enable the user to play each game. Access to the code is [here](/Txt-based%20game/Version%202/).
+
+For each version, run `sh run.sh` within the terminal or `./run.sh`. 
+
+<table><tr>
+<th>Version 1 commands</th>
+<th>Version 2 commands</th>
+</tr>
+<tr>
+<td>
+<pre>
+- move <direction> 
+- look || look <feature> || look <item> 
+- inventory
+- score 
+- map 
+- search <feature> 
+- wear <item> 
+- open <feature> 
+- hint 
+- cut 
+- quit 
+</pre>
+</td>
+<td>
+
+```json
+- drop <item> || drop <equipment>
+- get <item> || get <equipment>
+- help || help <command>
+- look room || look <exit> || look <feature> || look <item> || look <equipment> 
+- move <direction>
+- quit 
+- status <player> || status <inventory> || status <item> || status <equipment> || status <map> || status score
+- use <equipment> || use <equipment> on <feature>
+- combine <item> with <item> ==> creates an item or equipment
+```
+</td>
+</tr></table>
 
 ### Version 1  
 #### Description  
 This contains a terminal based user interface where the user can enter commands to pre-determined game format and environments, with the ability to:
-- Interact with all aspects within the room include features and item as well as dynamically allocating the boundary objects such as cliffs or wall depending on the room. This includes opening doors or chests and cutting vines.
-- Puzzles enabling score to be updated, completed by opening features by using the items within the inventory.
+- Interact with all aspects within the room including features, item and boundary objects such as cliffs and walls, (which was dynamically allocated as a feature even if not directly specified). This also includes opening doors or chests and cutting vines.
+- Puzzles were added enabling score to be updated, completed by opening features by using the items within the inventory.
 - Allows movement between room with the ability to display your current position and all rooms visited on a map.
-- Allows the player to wear items to prevent access or use items to light up rooms in darkness.
-- Dynamically allocates access between rooms once all the rooms have been defined
+- Allows the player to wear items to allow access to certain areas or use items to light up rooms in darkness, restricting commands if certain conditions were not met.
+- Dynamically allocates access between rooms once all the rooms have been defined, validating through access for players movement.
+- Enables the user to have hints to guide the player
+
+
+#### Challenges 
+1. As the commands, room and features got larger, the scalability of the project was limited, particularly due to the munual update of each features to the room. 
+2. Due to the limited number of classes, it was time consuming debugging as functions often had multiple purposes.
+
+Given the challenges were due to the current implementation structure and design of the code, i started version 2 with these challenges in mind 
+
+
 
 ### Version 2  
 #### Description
+Focus on solving challenges form version 1
 In terms of functionality, this is very similiar to version 1, however the structure is more dynamic, handling the scalablity of commands and features.
 - Can read in any text file with a given structure and enable the user to play, dynamically creating a viewable map using BFS as well as enabling a wide range of default and custom puzzles. In addition, it allows the user to print text or complete certain commands when certain constraints are met.
 
-
+// make own txt files
 
 #### Other key features  
  
 
-## How to use the project? 
-For each version, run `sh run.sh` within the terminal or `./run.sh`. 
-
-For version 2, you can both run the game and make your own text files for the game to run.
 
 
 ## Specific technologies
