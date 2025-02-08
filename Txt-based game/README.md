@@ -12,11 +12,11 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 <th>Version 2 commands</th>
 </tr>
 <tr>
-<td>
-- move &lt;direction&gt; 
+<td><pre>
+- move &lt;direction&gt;  
 - look || look &lt;feature&gt; || look &lt;item&gt; 
-- inventory
-- score 
+- inventory  
+- score   
 - map 
 - search &lt;feature&gt; 
 - wear &lt;item&gt; 
@@ -24,10 +24,8 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 - hint 
 - cut 
 - quit 
-</td>
+</pre></td>
 <td>
-
-
 - drop &lt;item&gt; || drop &lt;equipment&gt;
 - get &lt;item&gt; || get &lt;equipment&gt;
 - help || help &lt;command&gt;
@@ -37,7 +35,6 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 - status &lt;player&gt; || status &lt;inventory&gt; || status &lt;item&gt; || status &lt;equipment&gt; || status &lt;map&gt; || status score
 - use &lt;equipment&gt; || use &lt;equipment&gt; on &lt;feature&gt;
 - combine &lt;item&gt; with &lt;item&gt; ==> creates an item or equipment
-
 </td>
 </tr></table>
 
