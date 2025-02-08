@@ -1,4 +1,4 @@
-# $${\color{lightblue}Project: \space A \space learning \space resource \space for \space Maximum \space flow \space minimum \\ cut \space theorem \space within \space the \space further \space maths \space AQA \space curriculum \space in \space python}$$
+# $${\color{lightblue}Project: \space A \space learning \space resource \space for \space Maximum \space flow \space minimum \linebreak[3] cut \space theorem \space within \space the \space further \space maths \space AQA \space curriculum \space in \space python}$$
 
 ## Description 
 The maximum flow and minimum cut theorem can be a challenging topic due to multi-path and multi-cuts to analyse and find. The project provided an interactive teaching tool that allows a more versatile approach to building and solving problems within the context of maximum flow minimum cut theorem, giving appropriate solutions, enabling benefits both from a teaching perspective and as a student resource.
