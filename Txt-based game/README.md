@@ -40,8 +40,8 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 
 </td></tr></table>
 
-### Version 1  
-#### Description  
+## Version 1  
+### Description  
 This contains a terminal based user interface where the user can enter commands to pre-determined game format and environments, with the ability to:
 - Interact with all aspects within the room including features, item and boundary objects such as cliffs and walls, (which was dynamically allocated as a feature even if not directly specified). This also includes opening doors or chests and cutting vines.
 - Puzzles were added enabling score to be updated, completed by opening features by using the items within the inventory.
@@ -50,8 +50,7 @@ This contains a terminal based user interface where the user can enter commands 
 - Dynamically allocates access between rooms once all the rooms have been defined, validating through access for players movement.
 - Enables the user to have hints to guide the player
 
-
-#### Challenges 
+### Challenges 
 1. As the commands, room and features got larger, the scalability of the project was limited, particularly due to the munual update of each features to the room. 
 2. Due to the limited number of classes, it was time consuming debugging as functions often had multiple purposes.
 
