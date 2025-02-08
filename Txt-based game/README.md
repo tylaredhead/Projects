@@ -13,10 +13,10 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 </tr>
 <tr>
 <td>
-- move &lt;direction&gt; \n
+- move &lt;direction&gt;  
 - look || look &lt;feature&gt; || look &lt;item&gt; 
-- inventory  
-- score   
+- inventory
+- score 
 - map 
 - search &lt;feature&gt; 
 - wear &lt;item&gt; 
@@ -34,7 +34,7 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 - quit 
 - status &lt;player&gt; || status &lt;inventory&gt; || status &lt;item&gt; || status &lt;equipment&gt; || status &lt;map&gt; || status score
 - use &lt;equipment&gt; || use &lt;equipment&gt; on &lt;feature&gt;
-- combine &lt;item&gt; with &lt;item&gt; ==&gt; creates an item or equipment
+- combine &lt;item&gt; with &lt;item&gt; ==> creates an item or equipment
 </td>
 </tr></table>
 
