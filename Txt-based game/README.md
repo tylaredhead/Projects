@@ -58,8 +58,8 @@ This contains a terminal based user interface where the user can enter commands 
 Given the challenges were due to the current implementation structure and design of the code, i started version 2 with these challenges in mind. 
 
 
-### Version 2  
-#### Description
+## Version 2  
+### Description
 Focus on solving challenges form version 1
 In terms of functionality, this is very similiar to version 1 with all features barring wearing items and cutting, however the structure is more dynamic utilising interfaces inheritance and composition, handling the scalablity of commands and features. Further functioanlity includes:
 - Can read in any text file with a given structure and enable the user to play, dynamically creating a viewable map using BFS as well as enabling a wide range of default and custom puzzles. In addition, it allows the user to print text or complete certain commands when certain constraints are met.
@@ -68,7 +68,7 @@ In terms of functionality, this is very similiar to version 1 with all features 
 - Allows the player to choose their name
 - Allows points to be automatically added at the end if certain conditions are metthrough `bonus` in the txt file.
 
-#### Structure for txt files
+### Structure for txt files
 The structure of the file is layered so the player is defined, followed by the map, before each room with everything within directly beneath it. At the bottom, the combine items are defined followed by the conditions and then the bonus. An example is:
 
 ```
@@ -88,10 +88,10 @@ bonus:<score>,<item id 1>,<item id 2>, ...
 
 All inputs are strings barring hidden which acts as a boolean so must be true or false, with **,** acting as delimiters.
 
-#### Specific technologies
+### Specific technologies
 Version 2 uses Enum constants to allow sanitisation of commands, identifying the correct command class for the user action.This project also uses txt based libraries of `java.nio.file.*` and `java.io.*` to allow reading in the game designs.
 
-#### Challenges and future features
+### Challenges and future features
 In terms of the challenges from version 1, due to the code being distributed into a wider range of classes, each with a single purpose, this enable greater horizontal scalability such as adding new commands or features. Although each class is interdependent on other functions when the game is running, debugging was much more efficient, first debugging each function in isolation and then apart of the larger network of the classes.
 
 Due to the large number of possible permutations of a `.txt` file that are valid , i initially restricted it to the specific format shown within [Structure for txt files](#structure-for-txt-files), however the game format was still restrictive. To allow more versatility of games being played, i added the feature to have an option to add conditions that would execute a command and output text, allowing greater variety.
