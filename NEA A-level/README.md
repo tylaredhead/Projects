@@ -1,4 +1,4 @@
-# Project: A learning resource for Maximum flow minimum cut theorem within the further maths AQA curriculum in python
+# $${\color{lightblue}Light \space Blue}$$ Project: A learning resource for Maximum flow minimum cut theorem within the further maths AQA curriculum in python
 
 ## Description 
 The maximum flow and minimum cut theorem can be a challenging topic due to multi-path and multi-cuts to analyse and find. The project provided an interactive teaching tool that allows a more versatile approach to building and solving problems within the context of maximum flow minimum cut theorem, giving appropriate solutions, enabling benefits both from a teaching perspective and as a student resource.
