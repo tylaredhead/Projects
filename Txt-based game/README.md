@@ -11,8 +11,7 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 <th>Version 1 commands</th>
 <th>Version 2 commands</th>
 </tr>
-<tr>
-<td>
+<tr><td>
 
 - move &lt;direction&gt; 
 - look || look &lt;feature&gt; || look &lt;item&gt; 
@@ -39,8 +38,7 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 - quit 
 - combine &lt;item&gt; with &lt;item&gt; ==> creates an item or equipment
 
-</td>
-</tr></table>
+</td></tr></table>
 
 ### Version 1  
 #### Description  
@@ -91,21 +89,15 @@ bonus:<score>,<item id 1>,<item id 2>, ...
 All inputs are strings barring hidden which acts as a boolean so must be true or false, with **,** acting as delimiters.
 
 #### Specific technologies
-Version 2 uses Enum constants as well as txt based libraries of `java.nio.file.*` and `java.io.*` to allow reading in the game designs.
+Version 2 uses Enum constants to allow sanitisation of commands, identifying the correct command class for the user action.This project also uses txt based libraries of `java.nio.file.*` and `java.io.*` to allow reading in the game designs.
 
 #### Challenges and future features
 In terms of the challenges from version 1, due to the code being distributed into a wider range of classes, each with a single purpose, this enable greater horizontal scalability such as adding new commands or features. Although each class is interdependent on other functions when the game is running, debugging was much more efficient, first debugging each function in isolation and then apart of the larger network of the classes.
 
 Due to the large number of possible permutations of a `.txt` file that are valid , i initially restricted it to the specific format shown within [Structure for txt files](#structure-for-txt-files), however the game format was still restrictive. To allow more versatility of games being played, i added the feature to have an option to add conditions that would execute a command and output text, allowing greater variety.
-// make own txt files
-
-
-
-
-
-
-#### Other key features  
-// add link to figure 1 
  
-
 ## What did you learn
+1. The importance of scalability initially even from the design stage, evident with the different structure implementations of the code between version 1 and 2. This, combinied with debugging being less time consuming when functions are initially tested in isolation before being integrated.
+2. Object orientated programming approach utilising interfaces, inheritance, composition and ENUM constants .
+3. The use of libraries to read txt files.
+4. Deepened own knowledge on a range of data structures and algorithms such as hash maps and BFS.

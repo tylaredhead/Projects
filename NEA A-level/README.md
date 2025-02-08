@@ -60,7 +60,7 @@ Other future features include:
 1. Importance of scalability and versatility within the design
 2. Importance of user preferences, improving my communication with clients particularly in regards to the user interface elements
 3. Managing and debugging on a larger codebase
-4. Deepened own knowledge on a range of data structures algorithms such as queues and DFS, concepts of OOP and the pygame framework. 
+4. Deepened own knowledge on a range of data structures and algorithms such as queues and DFS, concepts of OOP and the pygame framework. 
 
 <img src="Program-GraphBuilding.png" alt="An image showing the graph being built" style="width:45%; height:auto;">  <img src="Program-Full.png" alt="n image showing the maximum flows and minimum cuts" style="width:45%; height:auto;" class="center">
 
