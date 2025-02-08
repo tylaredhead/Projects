@@ -13,7 +13,7 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 </tr>
 <tr>
 <td>
-<pre>
+```json
 - move <direction> 
 - look || look <feature> || look <item> 
 - inventory
@@ -25,7 +25,7 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 - hint 
 - cut 
 - quit 
-</pre>
+```
 </td>
 <td>
 
