@@ -73,8 +73,8 @@ In terms of functionality, this is very similiar to version 1 with all features 
 #### Structure for txt files
 The structure of the file is layered so the player is defined, followed by the map, before each room with everything within directly beneath it. At the bottom, the combine items are defined followed by the conditions and then the bonus. An example is:
 
-`player:<player name>  
-map:<map id>  
+`player:<player name>\
+map:<map id>\
 room:<id>,<name>,<description>,<hidden>  
     equipment:<id>,<name>,<description>,<hidden>,<use action>,<use target>,<use result>,<use description>  
     container:<id>,<name>,<description>,<hidden>  
