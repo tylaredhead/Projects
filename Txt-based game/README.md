@@ -13,6 +13,7 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 </tr>
 <tr>
 <td>
+
 - move &lt;direction&gt; 
 - look || look &lt;feature&gt; || look &lt;item&gt; 
 - inventory
@@ -24,9 +25,9 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 - hint 
 - cut 
 - quit 
+
 </td>
 <td>
-
 
 - drop &lt;item&gt; || drop &lt;equipment&gt;
 - get &lt;item&gt; || get &lt;equipment&gt;
