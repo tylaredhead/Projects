@@ -29,7 +29,7 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 </td>
 <td>
 
-```json
+
 - drop <item> || drop <equipment>
 - get <item> || get <equipment>
 - help || help <command>
@@ -39,7 +39,7 @@ For each version, run `sh run.sh` within the terminal or `./run.sh`.
 - status <player> || status <inventory> || status <item> || status <equipment> || status <map> || status score
 - use <equipment> || use <equipment> on <feature>
 - combine <item> with <item> ==> creates an item or equipment
-```
+
 </td>
 </tr></table>
 
