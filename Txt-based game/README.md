@@ -73,8 +73,7 @@ In terms of functionality, this is very similiar to version 1 with all features 
 #### Structure for txt files
 The structure of the file is layered so the player is defined, followed by the map, before each room with everything within directly beneath it. At the bottom, the combine items are defined followed by the conditions and then the bonus. An example is:
 
-`
-
+```
 player:<player name>
 map:<map id>
 room:<id>,<name>,<description>,<hidden>  
@@ -87,8 +86,7 @@ combine:<item id 1>,<item id 2>,<item id 3>,<item  name>,<item description>,<ite
 condition:<room id>,<command>=<display description>  
 condition:<room id>,<display description>  
 bonus:<score>,<item id 1>,<item id 2>, ...
-
-`
+```
 
 All inputs are strings barring hidden which acts as a boolean so must be true or false, with **,** acting as delimiters.
 
