@@ -1,0 +1,64 @@
+player:input
+map:r1
+score:10,5
+    room:r1,hallway,Aim - Escape the haunted house before ... The room is a fairly dim and bland other than the cobwebs.,false,H
+        exit:e1,east,A doorway lies to the east,r2,false
+        exit:e2,west,A doorway lies to the west,r3,false
+    room:r2,kitchen,The room is very large with the doors of cupboards half open and all cooking equipment gone,false,K
+        exit:e1,west,A doorway lies to the west,r1,false
+        exit:e2,north,A doorway lies to the north,r4,false
+        feature:f1,cupboards,Cupboards that lie half open,false
+        item:i1,medallion 1,A solid gold medallion,false
+    room:r3,living room,The room is large with only a couch and a table,false,L
+        exit:e1,east,A doorway lies to the east,r1,false
+        exit:e2,north,A doorway lies to the north,r5,false
+        feature:f1,table,The table is worn with large scratches on its surface,false
+        equipment:e1,lamp,A soft glow emenates from its surface,false,use,r7,r7,You used the lamp. Everything in the room can now be seen.
+    room:r4,bathroom,The room is covered with cobwebs and the toilet being in disrepair,false,T
+        exit:e1,north,A doorway lies to the north,r6,false
+        exit:e2,south,A doorway lies to the south,r2,false
+        exit:e3,west,A doorway lies to the west,r5,false
+        feature:f1,toilet,Large scratches cover the toilet with the toilet seat missing,false
+        feature:f2,cupboard,The cupboard lies half open with a small piece of paper lying on one of the shelves,false
+        item:i2,piece of paper,A smiley face in red ink covers the piece of paper,false
+    room:r5,dining room,A room with a large table but only a single chair lying on it,false,D
+        exit:e1,north,A doorway lies to the north,r8,false
+        exit:e2,south,A doorway lies to the south,r3,false
+        exit:e3,west,A doorway lies to the west,r7,false
+        exit:e4,east,A doorway lies to the east,r4,false
+        feature:f1,table,A solid wooden table,false
+        feature:f2,chair,A chair with only 3 legs,false        
+        equipment:e2,rusty key,A key that is very rusty with the markings being very feint,false,use,c1,i5,You opened the chest and discover another key
+    room:r6,bedroom,A room with even more cobwebs and single bed lying in the far corner and a painting lying above it,false,B
+        exit:e1,west,A doorway lies to the west,r9,false
+        exit:e2,south,A doorway lies to the south,r4,false
+        feature:f1,bed,A small bed covered in dust and is rather untidy,false
+        item:i3,painting,A painting that appear to be of a family with the numbers 12/03/96 written on the back,false
+    room:r7,library,The room is covered with large amounts of books with most being out of reach,true,l
+        exit:e1,east,A doorway lying to the east,r5,false
+        item:i4,book,A book about ghosts,false
+        item:i5,skeleton key1,An old skeleton key with half of it appears to be missing,true
+        container:c1,chest,A solid iron chest covered with cobwebs,false
+    room:r8,game room,A room with a pool table covered in cobwebs with no sign of any any equipment to play,false,G
+        exit:e1,east,A doorway lies to the east,r9,false
+        exit:e2,south,A doorway lies to the south,r5,false
+        feature:f1,pool table,A pool table that has large amounts of cobwebs on it,false
+        item:i6,medallion 2,A solid gold medallion,false
+    room:r9,garage,A room with little in it other than the large tyre tracks left by a vehicle which are now fading,false,g
+        exit:e1,north,A doorway lies to the north,r10,true
+        exit:e2,east,A doorway lies to the east,r6,false
+        exit:e3,west,A doorway lies to the west,r8,false
+        container:c2,safe,A sturdy looking safe that appears to have a number pad on it,false
+        container:c3,lock,A lock that is embedded into the garage door,false
+        equipment:e4,number pad,A number pad with all numbers seeming to be faded with what looks like a 6 digit code needed,false,use,input-120396=c2,i7,You opened the safe and found part of a key
+        item:i7,skeleton key2,An old skeleton key with half of it appears to be missing,true
+    room:r10,open plain,The sunlight shines above you with a flat open plain before you,false,O
+        exit:e1,south,A doorway lies to the south,r9,false
+combine:i5,i7,e5,skeleton key,An old skeleton key that is now complemeted,false,use,c3,e1,The garage door opens and you see sunlight...
+combine:i1,i6,i8,mega medallion,An even bigger medallion has been created,false
+condition:r10,quit=You won - you escaped the haunted mansion
+condition:0,quit=Too late - the ghost has found you and refuses for you to leave - game over
+condition:10,For a second you see a silhouette before it disappears
+condition:5,You here feel something on the back of you neck and you also feel like your being watched
+bonus:5,i1,i6
+bonus:15,i8
