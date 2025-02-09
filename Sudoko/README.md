@@ -23,7 +23,7 @@ This project uses 3 core libaries:
 
 ## Challenge and future features
 When building this project there was a couple of challenges.
-1. Shallow copying - when copying a 2D list, rather than copying the values of the data structure to a seperate memory location, this used a pointer to direct it to the same memory location, resulting in both variables being updated rather than just one. This was solved by using the copy.deepcopy function to force the new memory allocation.
+1. Shallow copying - when copying a 2D list, rather than copying the values of the data structure to a seperate memory location, this used a pointer to direct it to the same memory location, resulting in both variables being updated rather than just one.  This was solved by using the copy.deepcopy function to force the new memory allocation.
 2. Generating sudoku - when generating valid grid it was hard to determine if there was a single solution or multiple depending on the inital information provided, therefore used predetermined grid. Generation of sudoko's is a future feature. 
 3. GUI - when designing buttons, textboxes and design of the phases, i initially found it hard to find a design that was user friendly. However, by sending forms, this enabled a more structured approach similiar to as if i had a client.
 
