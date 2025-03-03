@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"name": "Projects",
+			"path": ".."
+		},
+		{
+			"name": "tkr499-1",
+			"path": "../../Assignment2/tkr499-1"
+		},
+		{
+			"name": "c-coursework",
+			"path": "../../Assignment2/c-coursework"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}
