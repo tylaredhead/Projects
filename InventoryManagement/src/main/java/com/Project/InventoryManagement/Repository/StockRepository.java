@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StockRepository extends JpaRepository<Stock, Integer>{
-    List<Stock> findByName(String name);
-    
+    List<Stock> findByRating(String rating);
+    List<Stock> findByQuantity(int quantity);
 }
