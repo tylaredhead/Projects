@@ -29,7 +29,7 @@ public class Product {
     }
 
     public int getProductId(){
-        return productid;
+        return productId;
     }
 
     public void setProductId(int id){
@@ -76,6 +76,7 @@ public class Product {
         this.price = price;
     }
 
+    @Override
     public String toString(){
         return "Product{" + productId + ", " + productName + ", " + productDesc + ", " + productType + ", " + supplierId + ", " + price + "}";
     }
