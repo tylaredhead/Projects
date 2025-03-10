@@ -11,12 +11,19 @@ import com.Project.InventoryManagement.Repository.*;
 
 @Service
 public class InventoryService implements InventoryServiceInterface{
+    private final StockRepository stockRepo;
+    private final SupplierRepository supplierRepo;
+    private final ProductRepository productRepo;
+
     @Autowired
-    private StockRepository stockRepo;
-    @Autowired
-    private SupplierRepository supplierRepo;
-    @Autowired
-    private ProductRepository productRepo;
+    public InventoryService(StockRepository stockRepo, 
+                            SupplierRepository supplierRepo, 
+                            ProductRepository productRepo){
+
+        this.stockRepo = stockRepo;
+        this.supplierRepo = supplierRepo;
+        this.productRepo = productRepo;
+    }
 
     @Override
     public Stock saveStock(Stock stock){
@@ -31,6 +38,11 @@ public class InventoryService implements InventoryServiceInterface{
     @Override
     public Stock findById(int id){
         return stockRepo.findById(id);
+    }
+
+    @Override
+    public List<Stock> findStockByProductName(String name){
+        return stockRepo.findStockByProductName(name);
     }
    
     @Override
@@ -157,6 +169,12 @@ public class InventoryService implements InventoryServiceInterface{
     public List<Product> findByPrice(float price){
         return productRepo.findByPrice(price);
     }
+
+    @Override 
+    public List<Product> findProductBySupplierName(String name){
+        return productRepo.findProductBySupplierName(name);
+    }
+
 
     @Override
     public Product updateProductName(int id, String name){

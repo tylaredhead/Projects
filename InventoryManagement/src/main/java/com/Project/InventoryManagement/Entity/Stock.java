@@ -1,10 +1,7 @@
 package com.Project.InventoryManagement.Entity;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class Stock {
@@ -12,9 +9,6 @@ public class Stock {
     private int id;
     private String rating;
     private int quantity;
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="id")
-    private Product product;
     
     public Stock(){}
 

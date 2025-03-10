@@ -56,6 +56,7 @@ public class Supplier {
         this.supplierEmail = email;
     }
 
+    @Override
     public String toString(){
         return "Supplier{" + supplierId + ", " + supplierName + ", " + supplierNo + ", " + supplierEmail + "}";
     }

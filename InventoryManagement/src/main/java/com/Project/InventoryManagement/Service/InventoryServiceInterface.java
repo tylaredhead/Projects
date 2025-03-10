@@ -10,6 +10,7 @@ public interface InventoryServiceInterface {
     public Stock saveStock(Stock stock);
     public List<Stock> getAllStock();
     public Stock findById(int id);
+    public List<Stock> findStockByProductName(String name);
     public List<Stock> findByRating(String rating);
     public List<Stock> findByQuantity(int quantity);
     public Stock updateRating(int id, String rating);
@@ -35,6 +36,7 @@ public interface InventoryServiceInterface {
     public List<Product> findByProductDesc(String desc);
     public List<Product> findByProductType(String type);
     public List<Product> findByPrice(float price);
+    List<Product> findProductBySupplierName(String name);
     public Product updateProductName(int id, String name);
     public Product updateProductDesc(int id, String desc);
     public Product updateProductType(int id, String type);
