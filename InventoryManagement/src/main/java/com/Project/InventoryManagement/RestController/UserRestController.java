@@ -18,7 +18,7 @@ import com.Project.InventoryManagement.Service.InventoryService;
 @RestController
 @RequestMapping("/user")
 public class UserRestController {
-    private final InventoryService inventoryService;
+    protected final InventoryService inventoryService;
 
     @Autowired
     public UserRestController(InventoryService inventoryService){
