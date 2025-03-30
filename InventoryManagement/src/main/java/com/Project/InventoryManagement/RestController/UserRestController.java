@@ -57,25 +57,25 @@ public class UserRestController {
     }
 
     @GetMapping("/{productName}")
-    public ResponseEntity<List<Product>> findByProductName(String name){
+    public ResponseEntity<List<Product>> findByProductName(@PathVariable String name){
         List<Product> product = inventoryService.findByProductName(name);
         return (product != null) ? ResponseEntity.ok(product) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @GetMapping("/{productDesc}")
-    public ResponseEntity<List<Product>> findByProductDesc(String desc){
+    public ResponseEntity<List<Product>> findByProductDesc(@PathVariable String desc){
         List<Product> product = inventoryService.findByProductDesc(desc);
         return (product != null) ? ResponseEntity.ok(product) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @GetMapping("/{productType}")
-    public ResponseEntity<List<Product>> findByProductType(String type){
+    public ResponseEntity<List<Product>> findByProductType(@PathVariable String type){
         List<Product> product = inventoryService.findByProductType(type);
         return (product != null) ? ResponseEntity.ok(product) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @GetMapping("/{price}")
-    public ResponseEntity<List<Product>> findByPrice(float price){
+    public ResponseEntity<List<Product>> findByPrice(@PathVariable float price){
         List<Product> product = inventoryService.findByPrice(price);
         return (product != null) ? ResponseEntity.ok(product) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
