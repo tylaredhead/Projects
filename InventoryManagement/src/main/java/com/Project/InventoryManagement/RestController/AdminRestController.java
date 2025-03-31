@@ -7,10 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.service.annotation.PutExchange;
 
+import com.Project.InventoryManagement.Entity.Product;
 import com.Project.InventoryManagement.Entity.Stock;
 import com.Project.InventoryManagement.Entity.Supplier;
 import com.Project.InventoryManagement.Service.InventoryService;
@@ -66,5 +69,17 @@ public class AdminRestController extends EmployeeRestController{
     @DeleteMapping("/{name}")
     public void deleteBySupplierName(@PathVariable String name){
         inventoryService.deleteBySupplierName(name);
+    }
+
+    @PostMapping
+    public ResponseEntity<Product> saveProduct(@RequestBody Product product){
+        product = inventoryService.saveProduct(product);
+        return ResponseEntity.ok(product);
+    }
+
+    @PutMapping("/name")
+    public ResponseEntity<Product> updateProductName(@PathVariable int id, @PathVariable String name){
+        Product product = inventoryService.updateProductName(id, name);
+        return (product != null) ? 
     }
 }
