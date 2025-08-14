@@ -6,7 +6,8 @@ Hi, my name is Tyla and i am studying Computer science. From a very young age, I
 My projects cover a range of languages in java, python, javascript, html and css including the frameworks pygame, sqlite3, springboot and react js.
 
 ##### My current project:
-My aims: Having worked with the languages and frameworks on more individual basis, I wanted to combine databases with web development to develop my understanding both with the use of a rest controller and the use of user authentication.\\
+My aims: Having worked with the languages and frameworks on more individual basis, I wanted to combine databases with web development to develop my understanding both with the use of a rest controller and the use of user authentication.
+
 [Inventory management](/InventoryManagement/) *html, css, javascript, react js, java, springboot*
 
 ##### Previous projects:
