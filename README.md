@@ -11,14 +11,14 @@ My aims: Having worked with the languages and frameworks on more individual basi
 [Inventory management](/InventoryManagement/) - <sub>html, css, javascript, react js, java, springboot</sub>
 
 ##### Previous projects:
-1. [NEA - Teaching resource for maximum flow minimum cut theorem](/NEA%20A-level/) - <sub>python, pygame</sub>
-2. [Txt-based game](/Txt-based%20game/) - <sub>java</sub>
-3. [Sudoku](/Sudoku/) - <sub>python, pygame</sub>
+1. [NEA - Teaching resource for maximum flow minimum cut theorem](/NEA%20A-level/)<sub> - python, pygame</sub>
+2. [Txt-based game](/Txt-based%20game/)<sub> - java</sub>
+3. [Sudoku](/Sudoku/)<sub> - python, pygame</sub>
 
 ##### Smaller Projects:
-1. [Bank details](/Bank_details/) - <sub>python, sqlite3</sub>
-2. [File management](/File%20management/) - <sub>c</sub>
-3. [Monitoring stock](/Monitoring%20stock/) - <sub>python, sqlite3</sub>
+1. [Bank details](/Bank_details/)<sub> - python, sqlite3</sub>
+2. [File management](/File%20management/)<sub> - c</sub>
+3. [Monitoring stock](/Monitoring%20stock/)<sub> - python, sqlite3</sub>
 
 #### What I learned through these projects? 
  - Being versatile and adaptable is key, maximising growth and learning development, both within others as well as myself. 
