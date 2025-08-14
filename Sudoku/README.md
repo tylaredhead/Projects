@@ -29,7 +29,7 @@ When building this project there was a couple of challenges.
 
 Although this project acts as a tool for solving sudoku, this could, if it is displayed the backtracking algorithm to the user, be a tool used for understanding recursion.
 
-## What did you learn
+## What did i learn
 1. The importance of communication with clients - enables a focus of the user interface and design, allowing a more simplistic GUI that is more accessible.
 2. Databases - using sqlite3 to create a relational database, although the database was a single table, this taught me through research about normalisation as well as the framework, utilising SQL queries where appropiate.
 3. Pygame - through this having a multi-phase approach to the project, this taught me the ability to segment the game into procedures, highlighting the importance of dynamic object generation especially due to the 91 inputboxes for the sudoko grid.
