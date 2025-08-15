@@ -19,7 +19,7 @@ For example, 'gcc create.c validateFileName.c checkFileExists.c -o create'.
 
 To run the individual commands once compiled, use './alias txtFileName' unless specified. For example, if there is a txt file of **hi.txt**, then './appendLine hi.txt' or './appendLine hi'. The other inforamtion is enetered after this initial command.
 The exemptions are:
-1. './copy fromFileName toFileName'.
+1. `./copy fromFileName toFileName`.
 2. './grep fileName' - searches substring which is entered after inside a specific file.
 3. './grep' - searches substring within the files within the current directory.
 
@@ -28,4 +28,5 @@ The exemptions are:
 
 
 ## What did i learn
-1. Although a modular approach worked, there was a large amount of duplciity particularly when compiling due to 'handleChangeLog.c'. This meant although i considered the ability to directly use the command line when running, it showed the importance in terms of compiling.
+1. Although a modular approach worked, there was a large amount of duplciity particularly when compiling due to 'handleChangeLog.c'. This meant although i considered the ability to directly use the command line when running, it showed the importance for simplifying the initial set up for the user.
+2. The impacts of memory leaks when dealing with memory allocation, ensuring buffers can't be overloaded.
