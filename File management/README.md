@@ -5,7 +5,7 @@ This project once compiled through a command line interface:
 - Creates a file ([create.c](./create.c))
 - Deletes a file ([delete.c](./delete.c))
 - Adds a line in a file ([appendLine.c](./appendLine.c))
-- Deletes a line in a file ([deleteLine.c](./deleteLine.c))
+- Copies the contents of a file ([copy.c](./copy.c))
 - Searches for a substr in a file ([grep.c](./grep.c))
 - Records the users changes to the file, making it immutable to the user ([handleChangeLog.c](./handleChangeLog.c))
 - Show the change log of the file ([showChangeLog.c](./showChangeLog.c))
@@ -17,11 +17,15 @@ Download a gcc compiler and use the command 'gcc fileName.c validateFileName.c c
 
 For example, 'gcc create.c validateFileName.c checkFileExists.c -o create'.
 
-To run the individual commands once compiled, use './alias txtFileName'. For example, if there is a txt file of **hi.txt**, then './appendLine hi.txt' or './appendLine hi'.
+To run the individual commands once compiled, use './alias txtFileName' unless specified. For example, if there is a txt file of **hi.txt**, then './appendLine hi.txt' or './appendLine hi'. The other inforamtion is enetered after this initial command.
+The exemptions are:
+1. './copy fromFileName toFileName'.
+2. './grep fileName' - searches substring which is entered after inside a specific file.
+3. './grep' - searches substring within the files within the current directory.
 
 ## Challenges
-- Design of the database - Initially, the plan was for more of a normalised database, however there was little data duplicity within the records. Therefore, by simplifying it, it reduced the complexity.
+- Immutability of the changelog - Before the idea of using a .log, the idea was to reserve and alt name to the txt, however not only does this mean after every create command, this has to check all filenames for an existing changelog file that could contradict being time inefficient, it can also cause a reduced range of names as some will have to reserved. 
+
 
 ## What did i learn
-1. The scalability and more efficient debugging long term with a more modular approach, breaking down the original main file
-2. Databases - using sqlite3 to create a relational database, although the database was a single table, this taught me through research about normalisation as well as the framework, utilising SQL queries where appropiate, handling SQL injections.
+1. Although a modular approach worked, there was a large amount of duplciity particularly when compiling due to 'handleChangeLog.c'. This meant although i considered the ability to directly use the command line when running, it showed the importance in terms of compiling.
