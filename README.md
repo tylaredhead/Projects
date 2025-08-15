@@ -16,13 +16,12 @@ My aims: Having worked with the languages and frameworks on more individual basi
 3. [Sudoku](/Sudoku/)<sub> - python, pygame</sub>
 
 ##### Smaller Projects:
-1. [Bank details](/Bank_details/)<sub> - python, sqlite3</sub>
-2. [File management](/File%20management/)<sub> - c</sub>
-3. [Monitoring stock](/Monitoring%20stock/)<sub> - python, sqlite3</sub>
+1. [File management](/File%20management/)<sub> - c</sub>
+2. [Monitoring stock](/Monitoring%20stock/)<sub> - python, sqlite3</sub>
 
 #### What I learned through these projects? 
  - Being versatile and adaptable is key, maximising growth and learning development, both within others as well as myself. 
  - Reflection is the key to improvement - By embracing others around you and focusing on your own weaknesses both in a technical aspect as well as through   interpersonal skills, this makes me into a better version of yourself, creating constant improvement.
- - Communication - when speaking with clients, the importance for coherence and regular check ins is both time efficient in the short term and long term when developing as well as to tackle changes early
+ - Communication - when speaking with clients, the importance for coherence and regular check ins is both time efficient in the short term and long term when developing as well as to tackle changes early.
  - Scalability and designing first is the key to both time efficiency as well as in simplicity of the code in the long term.
 
