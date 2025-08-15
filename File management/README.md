@@ -13,20 +13,20 @@ This project once compiled through a command line interface:
 - Validates the file name added to ensure a .txt ([validateFileName](./validateFileName.c))
 
 ## Getting started
-Download a gcc compiler and use the command 'gcc fileName.c validateFileName.c checkFileExists.c -o alias' where the fileName.c is replaced by all file name excluding ones mentioned and alias is what compiled files name.
+Download a gcc compiler and use the command `gcc fileName.c validateFileName.c checkFileExists.c -o alias` where the fileName.c is replaced by all file name excluding ones mentioned and alias is what compiled files name.
 
-For example, 'gcc create.c validateFileName.c checkFileExists.c -o create'.
+For example, `gcc create.c validateFileName.c checkFileExists.c -o create`.
 
-To run the individual commands once compiled, use './alias txtFileName' unless specified. For example, if there is a txt file of **hi.txt**, then './appendLine hi.txt' or './appendLine hi'. The other inforamtion is enetered after this initial command.
+To run the individual commands once compiled, use `./alias txtFileName` unless specified. For example, if there is a txt file of **hi.txt**, then `./appendLine hi.txt` or `./appendLine hi`. The other inforamtion is enetered after this initial command.
 The exemptions are:
 1. `./copy fromFileName toFileName`.
-2. './grep fileName' - searches substring which is entered after inside a specific file.
-3. './grep' - searches substring within the files within the current directory.
+2. `./grep fileName` - searches substring which is entered after inside a specific file.
+3. `./grep` - searches substring within the files within the current directory.
 
 ## Challenges
 - Immutability of the changelog - Before the idea of using a .log, the idea was to reserve and alt name to the txt, however not only does this mean after every create command, this has to check all filenames for an existing changelog file that could contradict being time inefficient, it can also cause a reduced range of names as some will have to reserved. 
 
 
 ## What did i learn
-1. Although a modular approach worked, there was a large amount of duplciity particularly when compiling due to 'handleChangeLog.c'. This meant although i considered the ability to directly use the command line when running, it showed the importance for simplifying the initial set up for the user.
+1. Although a modular approach worked, there was a large amount of duplciity particularly when compiling due to `handleChangeLog.c`. This meant although i considered the ability to directly use the command line when running, it showed the importance for simplifying the initial set up for the user.
 2. The impacts of memory leaks when dealing with memory allocation, ensuring buffers can't be overloaded.
