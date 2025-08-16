@@ -1,6 +1,6 @@
 # Projects - Tyla Redhead
 
-Hi, my name is Tyla and i am studying Computer science. From a very young age, I have always loved problem solving and helping others. From making my first website to my current project in software development, i love the ability to make a solution that can directly improve the efficiency of a process. Well, what can i do? I can build a variety of applications in java and python, with me developing my skills in react js and springboot. 
+ Hi, my name is Tyla and I am studying Computer Science @ University of Birmingham. A passion of mine has always been problem solving and helping others. From making my first website to my current project in software/web development, I love the ability to make a solution that can directly improve the efficiency of a process or a user. I can build a variety of applications in java and python. I am also continuing to develop my skills in Javascript as well as with the frameworks React JS and Spring Boot.
 
 ## Contents 
 My projects cover a range of languages in java, python, javascript, html and css including the frameworks pygame, sqlite3, springboot and react js.
@@ -20,8 +20,7 @@ My aims: Having worked with the languages and frameworks on more individual basi
 2. [Monitoring stock](/Monitoring%20stock/)<sub> - python, sqlite3</sub>
 
 #### What I learned through these projects? 
- - Being versatile and adaptable is key, maximising growth and learning development, both within others as well as myself. 
- - Reflection is the key to improvement - By embracing others around you and focusing on your own weaknesses both in a technical aspect as well as through   interpersonal skills, this makes me into a better version of yourself, creating constant improvement.
- - Communication - when speaking with clients, the importance for coherence and regular check ins is both time efficient in the short term and long term when developing as well as to tackle changes early.
- - Scalability and designing first is the key to both time efficiency as well as in simplicity of the code in the long term.
+- Versatility - this is key to maximising growth and development for others and myself, enabling for more .
+- Communication – recognition of the need for different approaches, energy and tone dependent on whether it is a group or individual.
+- Reflection – the ability to receive construction criticism is key to my continued improvement.
 

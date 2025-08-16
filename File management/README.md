@@ -27,6 +27,6 @@ The exemptions are:
 - Immutability of the changelog - Before the idea of using a .log, the idea was to reserve and alt name to the txt, however not only does this mean after every create command, this has to check all filenames for an existing changelog file that could contradict being time inefficient, it can also cause a reduced range of names as some will have to reserved. 
 
 
-## What did i learn
-1. Although a modular approach worked, there was a large amount of duplciity particularly when compiling due to `handleChangeLog.c`. This meant although i considered the ability to directly use the command line when running, it showed the importance for simplifying the initial set up for the user.
+## What did I learn
+1. Although a modular approach worked, there was a large amount of duplciity particularly when compiling due to `handleChangeLog.c`. This meant although I considered the ability to directly use the command line when running, it showed the importance for simplifying the initial set up for the user.
 2. The impacts of memory leaks when dealing with memory allocation, ensuring buffers can't be overloaded.

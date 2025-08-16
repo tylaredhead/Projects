@@ -1,9 +1,9 @@
-# Project: A learning resource for Maximum flow minimum cut theorem within the further maths AQA curriculum in python
+# Project: A learning resource for 'Maximum flow minimum cut theorem' within the further maths AQA curriculum in python
 
 ## Description 
 The maximum flow and minimum cut theorem can be a challenging topic due to multi-path and multi-cuts to analyse and find. The project provided an interactive teaching tool that allows a more versatile approach to building and solving problems within the context of maximum flow minimum cut theorem, giving appropriate solutions, enabling benefits both from a teaching perspective and as a student resource.
 
-From doing further maths myself, i found little resources online for maximum flow minimum cut theorem, most of which were powerpoints, therefore the project was made to supplement these and allow the creation of a greater problem set which each graph having a step by step approach to not only aid understanding but verify your solutions. 
+From doing further maths myself, I found little resources online for maximum flow minimum cut theorem, most of which were powerpoints, therefore the project was made to supplement these and allow the creation of a greater problem set with each graph having a step by step approach to not only aid understanding but verify your solutions. 
 
 #### The project creates an interactive GUI where the user can:  
 
@@ -27,7 +27,7 @@ From doing further maths myself, i found little resources online for maximum flo
 - Built the algorithm for maximum flow and minimum cut aspects of the solution from scratch, in particular using the intersection between a cut and edge to determine invalid cuts and the side at which the node lies (either the source or sink side). The maximum flows was also revealed in a step by step manner, allowing greater focus on each individual path. 
 - Use multi coloured cuts as well as highlighting the back flow when 0, enabling a focus on a specific part.  
 
-**For a more detailed explanation of the project, see the write up folder** [here](/NEA%20A-level/Write%20up).
+**For a more detailed explanation of the project, see the write-up folder** [here](/NEA%20A-level/Write%20up).
 
 ## How to use the project? 
 This projects acts as a tool to create and validate your answers for each graph made. This can be run through the NetworkFlows10.py file if pygame is installed within the IDE.
@@ -36,8 +36,8 @@ If this is not installed, this below code should work on windows and linux depen
 
 ## Specific technologies
 
-The pygame framework was used over others such as Tkinter due to the real time user interaction when drawing cuts. Although this means the screen will refresh constantly, however this enables the user to experiment with a range of cuts to further increase there understanding.  
-Although tkinter has more accessible GUI features such as scrollbar unlike pygame, resulting a custom GUI interface, this meant i could configure buttons and scrollbars to a specific use case, allowing greater versatility.
+The pygame framework was used over others such as tkinter due to the real time user interaction when drawing cuts. Although this means the screen will refresh constantly, however this enables the user to experiment with a range of cuts to further increase there understanding.  
+Although tkinter has more accessible GUI features such as scrollbar unlike pygame, resulting a custom GUI interface, this meant I could configure buttons and scrollbars to a specific use case, allowing greater versatility.
 
 ## Challenges and future features
 
@@ -64,4 +64,4 @@ Other future features include:
 
 <img src="Program-GraphBuilding.png" alt="An image showing the graph being built" style="width:45%; height:auto;">  <img src="Program-Full.png" alt="n image showing the maximum flows and minimum cuts" style="width:45%; height:auto;" class="center">
 
-Does this focus on main features of the project? Does this focus on challenges and then how i overcome them
+Does this focus on main features of the project? Does this focus on challenges and then how I overcome them
