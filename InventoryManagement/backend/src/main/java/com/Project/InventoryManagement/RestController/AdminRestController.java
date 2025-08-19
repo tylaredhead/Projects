@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.service.annotation.PutExchange;
 
 import com.Project.InventoryManagement.Entity.Product;
 import com.Project.InventoryManagement.Entity.Stock;
@@ -80,6 +79,6 @@ public class AdminRestController extends EmployeeRestController{
     @PutMapping("/name")
     public ResponseEntity<Product> updateProductName(@PathVariable int id, @PathVariable String name){
         Product product = inventoryService.updateProductName(id, name);
-        return (product != null) ? 
+        return (product != null) ? ResponseEntity.ok(product) : ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 }
