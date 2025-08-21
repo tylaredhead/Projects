@@ -1,0 +1,83 @@
+.loginPage {
+    background-color: black;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 25px 40px;
+    text-align:center;
+    background-color: lightgrey;
+    color:black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px;
+    border-color: black;
+    border-width: 1px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    left: 10px;
+}
+
+.password-input {
+    width: 100%;
+}
+
+h1 {
+    top: 0;
+    text-align: center;
+}
+
+label {
+    left: 0;
+}
+
+button {
+    padding: 10px;
+    margin:10px 0px 0px 0px;;
+}
+
+.button-events:hover {
+    cursor: pointer;
+    background-color: rgb(89, 88, 88);
+    transition: transform 0.2s ease-out;
+    transform: scale(1.1) ;
+}
+
+.button-events:active {
+
+}
+
+p { 
+    padding: 3px;
+    margin: 0;
+}
+
+.error-msg {
+    color:red;
+    font-size: small;
+    padding: 5px 0px 0px 0px;
+}
+
+.password-container {
+    position: relative;
+    display: flex; 
+}
+
+img {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+
