@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { LoginUser } from '../../LoginUser.js';
 import './Login.css';
 
 function Login() {
@@ -17,8 +19,12 @@ function Login() {
         <div className = 'loginPage'>
             <div className='container'>
                 <h1>Login</h1>
-                <form onSubmit={(e) => {
-                    <h1>Hi</h1>
+                <form onSubmit={() => {
+                    if (LoginUser(username={username}, password={password}).role === "admin") {
+                        setinvalidLogin(false);
+                        Navigate(to='/Get');
+
+                    } else setinvalidLogin(true);
                     //setisLoading(false);
                 }}>
                     <label for='username'>Username:</label>
