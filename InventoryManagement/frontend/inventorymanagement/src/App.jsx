@@ -1,31 +1,42 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, useLocation, Routes } from 'react-router-dom';
-import viteLogo from '/vite.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Login from './components/pages/Login';
-import Navbar from './components/navbar';
-import Get from './components/pages/Get';
-import Update from './components/pages/Update'; 
-import Delete from './components/pages/Delete';
 import './App.css';
 
 
-function App() {
-  const location = useLocation();
-  
+function AppContent() {
+  //const location = useLocation();
+
   return (
+    <>
+      <h1> Login </h1>
+    </>
+  );
+  
+  /*return (
     <div>
-      <Router>
-        <Login />
-        (location.pathname != '/' && {<Navbar />});
+        {location.pathname != '/' && <Navbar />}
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/Get' element={<Get />} />
           <Route path='/Update' element={<Update />} />
           <Route path='/Delete' element={<Delete />} />
         </Routes>
-      </Router>
     </div>
+  );*/
+}
+
+function App() {
+  return (
+    <>
+      <BrowserRouter>
+        <Router>
+          <AppContent />
+        </Router>
+      </BrowserRouter>
+     
+    </>
   );
 }
 
