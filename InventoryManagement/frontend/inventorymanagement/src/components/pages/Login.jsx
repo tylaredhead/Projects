@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-//import { useNavigate } from 'react-router-dom';
-//import { LoginUser } from '../../LoginUser.js';
+import { useNavigate } from 'react-router-dom';
+import { LoginUser } from '../../LoginUser.js';
 import './Login.css';
 
 function Login() {
@@ -14,7 +14,7 @@ function Login() {
     const updatepassword = (s) => {setpassword(s.target.value);};
     const handleToggle = () => {setshowToggle(!showToggle);};
 
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
 
     // need a condiitonal that sends token and if false add p, sort rerendering on conditional, eye for pass and loading on submit button
     return (
@@ -22,11 +22,12 @@ function Login() {
             <div className='container'>
                 <h1>Login</h1>
                 <form onSubmit={() => {
+                    navigate('/Get');
                     //const token = LoginUser({username:username, pass:password});
                     const token = {role:'admin'};
                     if (token.role === "admin") {
                         setinvalidLogin(false);
-                        //navigate('/Get');
+                        navigate('/Get');
 
                     } else setinvalidLogin(true);
                     //setisLoading(false);

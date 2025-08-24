@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, useLocation, Routes } from 'react-router-dom';
 
-import Login from './components/pages/Login';
+import Login from './components/pages/Login.jsx';
+import Get from './components/pages/Get.jsx';
+import Update from './components/pages/Update.jsx';
+import Delete from './components/pages/Delete.jsx';
+import Navbar from './components/Navbar.jsx';
 import './App.css';
 
 
 function AppContent() {
-  //const location = useLocation();
-
-  return (
-    <>
-      <h1> Login </h1>
-    </>
-  );
+  const location = useLocation();
   
-  /*return (
+  return (
     <div>
         {location.pathname != '/' && <Navbar />}
         <Routes>
@@ -24,18 +22,15 @@ function AppContent() {
           <Route path='/Delete' element={<Delete />} />
         </Routes>
     </div>
-  );*/
+  );
 }
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Router>
-          <AppContent />
-        </Router>
+        <AppContent />
       </BrowserRouter>
-     
     </>
   );
 }
