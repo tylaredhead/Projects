@@ -11,18 +11,17 @@ import './App.css';
 
 
 function App() {
-  const useLocation = useLocation();
+  const location = useLocation();
   
   return (
     <div>
       <Router>
         <Login />
-        if (useLocation.pathname != '/') {<Navbar />};
+        (location.pathname != '/' && {<Navbar />});
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/Get' element={<Get />} />
-          <Route path='/Post' element={<Post />} />
-          <Route path='/Put' element={<Put />} />
+          <Route path='/Update' element={<Update />} />
           <Route path='/Delete' element={<Delete />} />
         </Routes>
       </Router>

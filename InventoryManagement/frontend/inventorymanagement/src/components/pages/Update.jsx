@@ -1,4 +1,4 @@
-export default function Update{}
+export default function Update() {
     return (
         <div>
             <h1>Get Page</h1>

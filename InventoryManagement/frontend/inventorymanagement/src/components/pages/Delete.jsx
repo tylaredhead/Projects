@@ -1,4 +1,4 @@
-export default function Delete{}
+export default function Delete() {
     return (
         <div>
             <h1>Get Page</h1>

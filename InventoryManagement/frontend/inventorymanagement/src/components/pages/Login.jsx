@@ -20,9 +20,9 @@ function Login() {
             <div className='container'>
                 <h1>Login</h1>
                 <form onSubmit={() => {
-                    if (LoginUser(username={username}, password={password}).role === "admin") {
+                    if (LoginUser(uname={username}, pass={password}).role === "admin") {
                         setinvalidLogin(false);
-                        Navigate(to='/Get');
+                        useNavigate(to='/Get');
 
                     } else setinvalidLogin(true);
                     //setisLoading(false);
