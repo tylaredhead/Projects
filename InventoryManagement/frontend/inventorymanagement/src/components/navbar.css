@@ -30,7 +30,6 @@ li {
     float: left;
     width: 25%;
     text-align: center;
-    padding: 20px 0px;
 }
 
 .navbar ul li:hover, .navbar ul li:hover .link{
@@ -41,7 +40,7 @@ li {
     transition: transform 0.5s ease;
 }
 
-link:visited{
-    background-color: black;
-    color: darkgrey;
+.link{
+    display: block;
+    padding: 20px 10px;
 }

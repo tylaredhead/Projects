@@ -1,6 +1,6 @@
+import './footer.css';
 
-
-fucntion Footer(){
+function  Footer(){
     return (
         <div className="footer">
             <p>Inventory Managemnet System- Tyla Redhead</p>

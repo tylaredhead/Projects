@@ -6,6 +6,7 @@ import Get from './components/pages/Get.jsx';
 import Update from './components/pages/Update.jsx';
 import Delete from './components/pages/Delete.jsx';
 import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
 import './App.css';
 
 
@@ -21,6 +22,7 @@ function AppContent() {
           <Route path='/Update' element={<Update />} />
           <Route path='/Delete' element={<Delete />} />
         </Routes>
+        <Footer />
     </div>
   );
 }

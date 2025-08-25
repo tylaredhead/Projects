@@ -1,7 +1,7 @@
 .footer {
     background-color: rgb(59, 58, 58);
     padding: 10px 25px;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
