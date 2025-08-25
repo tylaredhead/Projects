@@ -17,4 +17,14 @@ app.post('/login', (req, res) => {
     return res.send({role: 'none'});
 });
 
+app.put('register', (req, res) => {
+    for (let i=0; i < users.length; i++) {
+        if (req.body.username === users[i].username && req.body.password == users[i].password) {
+            users = [...users, {username: req.body.newUsername, password: req.body.newPassword, role: 'req.body.role'}];
+        }
+    }
+
+    return res.status(200).send('OK');
+})
+
 app.listen(8080, () => console.log('Hi'));

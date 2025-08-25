@@ -22,7 +22,7 @@ function Login() {
             const token = await LoginUser({username, password});
             if (token.role === 'admin') {
                 setinvalidLogin(false);
-                sessionStorage.setItem('login', {'username':username, password:password}););
+                sessionStorage.setItem('login', {'username':username, password:password});
                 navigate('/Get');
             } else setinvalidLogin(true);
         } catch (error) {

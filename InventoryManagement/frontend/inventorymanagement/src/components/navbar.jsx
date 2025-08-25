@@ -10,6 +10,8 @@ function Navbar(){
     const handleLogOut = () => {<h1>Log out</h1>;
         // reset ENUM autheicate code and redirect to login page
     }
+    // sort so can press anywhere on the box to naviagate
+    // understand async and await
 
     return (
         <>
