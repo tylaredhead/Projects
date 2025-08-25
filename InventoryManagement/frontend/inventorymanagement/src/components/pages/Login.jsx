@@ -14,19 +14,21 @@ function Login() {
     const updatepassword = (s) => {setpassword(s.target.value);};
     const handleToggle = () => {setshowToggle(!showToggle);};
 
-    const handleLoginAuth = () => {
+    const navigate = useNavigate();
+
+    const handleLoginAuth = async (e) => {
+        e.preventDefault();
         try {
-            const token = LoginUser({username:username, password:password});
+            const token = await LoginUser({username, password});
             if (token.role === 'admin') {
                 setinvalidLogin(false);
+                sessionStorage.setItem('login', {'username':username, password:password}););
                 navigate('/Get');
             } else setinvalidLogin(true);
         } catch (error) {
             setinvalidLogin(true);
         }
     };
-
-    const navigate = useNavigate();
 
     // need a condiitonal that sends token and if false add p, sort rerendering on conditional, eye for pass and loading on submit button
     return (
@@ -41,7 +43,7 @@ function Login() {
                     <label for='password'>Password:</label>
                     <div className='password-container'>
                         <input className='password-input' type={(showToggle) ? 'text' : 'password'} id='password' name='password' placeholder='Enter your password...' onChange={updatepassword} required />
-                        <img src={(!showToggle) ? '/public/showToggle.svg' : '/public/hideToggle.svg'} alt='show toggle password' onClick={handleToggle}></img>
+                        <img src={(!showToggle) ? 'showToggle.svg' : 'hideToggle.svg'} alt='show toggle password' onClick={handleToggle}></img>
                     </div>
                     <button className='button-events' type='submit'>
                         Log in

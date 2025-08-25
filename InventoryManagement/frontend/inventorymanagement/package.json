@@ -13,6 +13,8 @@
     "@coreui/react": "^5.7.1",
     "@coreui/react-pro": "^5.20.0",
     "bootstrap": "^5.3.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^6.30.1"
