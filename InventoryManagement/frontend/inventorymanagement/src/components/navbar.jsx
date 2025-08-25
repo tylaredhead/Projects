@@ -1,5 +1,5 @@
-import React, { useLocation } from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { useLocation, Link } from 'react-router-dom';
 
 import './navbar.css';
 
@@ -19,15 +19,16 @@ function Navbar(){
 
     // sort so can press anywhere on the box to naviagate
     // understand async and await
+    //alert(location.pathname);
 
     return (
         <>
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <ul className='nav-links'>
-                        <li><Link to='/Get' className='link {findActive.Get}'>Find</Link></li>
-                        <li><Link to='/Update' className='link {findActive.Update'>Update</Link></li>
-                        <li><Link to='/Delete'className='link {findActive.Delete}'>Delete</Link></li>
+                        <li className={findActive.Get}><Link to='/Get' className='link'>Find</Link></li>
+                        <li><Link to='/Update' className='link'>Update</Link></li>
+                        <li><Link to='/Delete'className='link'>Delete</Link></li>
                         <li><Link to='/' className='link'>Log out</Link></li>
                     </ul>
                 </div>

@@ -44,3 +44,9 @@ li {
     display: block;
     padding: 20px 10px;
 }
+
+.active, .active .link{
+    background-color: rgb(193, 225, 246);
+    color: black;
+    font-weight: bold;
+}
