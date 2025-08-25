@@ -27,8 +27,8 @@ function Navbar(){
                 <div className='navbar-container'>
                     <ul className='nav-links'>
                         <li className={findActive.Get}><Link to='/Get' className='link'>Find</Link></li>
-                        <li><Link to='/Update' className='link'>Update</Link></li>
-                        <li><Link to='/Delete'className='link'>Delete</Link></li>
+                        <li className={findActive.Update}><Link to='/Update' className='link'>Update</Link></li>
+                        <li className={findActive.Delete}><Link to='/Delete'className='link'>Delete</Link></li>
                         <li><Link to='/' className='link'>Log out</Link></li>
                     </ul>
                 </div>
