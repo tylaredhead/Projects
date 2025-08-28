@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LoginUser } from '../../LoginUser.js';
+import { LoginUser, encryptData } from '../../LoginUser.js';
 import './Login.css';
 
+// add encryption to password and username in session storage
 function Login() {
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
@@ -19,10 +20,12 @@ function Login() {
     const handleLoginAuth = async (e) => {
         e.preventDefault();
         try {
-            const token = await LoginUser({username, password});
+            const data = encryptData({'username':username, password:password});
+            const token = await LoginUser(data);
             if (token.role === 'admin') {
                 setinvalidLogin(false);
-                sessionStorage.setItem('login', {'username':username, password:password});
+            
+                sessionStorage.setItem('login', {username:username, password:password});
                 navigate('/Get');
             } else setinvalidLogin(true);
         } catch (error) {

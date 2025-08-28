@@ -1,29 +1,18 @@
-const bcrypt = require('bcrypt');
+import { createHash, compareHash } from './handleHash.js';
+import { decrypt } from './decrypt.js';
+
+const NodeRSA = require("node-rsa");
 const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const createHash = async (password) => {
-    const hash = await bcrypt.hash(password, 10);
-    return hash;
-}
-
-const compareHash = async (password, hashPass) => {
-    const isMatch = await bcrypt.compare(
-        password,
-        hashPass,
-        (error, result) => { return (!error && result); }
-    );
-    return isMatch;
-    
-}
 let users = [{username: 'a', password:createHash("a"), role:'admin'}];
 
 app.use(express.json());
 app.use(cors({ origin: 'http://localhost:5173' }));
 
-
 app.post('/login', (req, res) => {
+    req.body = decrypt(req.body);
     for (let i=0; i < users.length; i++) {
         let match = compareHash(req.body.password, users[i].password);
         if (req.body.username === users[i].username && match) {

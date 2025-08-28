@@ -16,12 +16,17 @@ function Navbar(){
         'Delete': (location.pathname === '/Delete') ? 'active' : ''
     };
 
+
+    // [0] => Get page, [1] => Update page, [2] => Delete page
     const access = [true, false, false]
     const haveAccess = async (e) => {
         const token = await LoginUser({
             username: sessionStorage.getItem('login').username, 
             password: sessionStorage.getItem('login').password
         });
+
+        if (token.role == 'admin' || token.role == 'employee') access[1] = true;
+        if (token.role == 'admin') access[2] = true;
         // if location is update or delete)
     }
     // need user auth
@@ -36,10 +41,10 @@ function Navbar(){
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <ul className='nav-links'>
-                        <li className={findActive.Get}><Link to='/Get' className='link'>Find</Link></li>
-                        <li className={findActive.Update}><Link to='/Update' className='link'>Update</Link></li>
-                        <li className={findActive.Delete}><Link to='/Delete'className='link'>Delete</Link></li>
-                        <li><Link to='/' className='link' onClick={handleLogOut}>Log out</Link></li>
+                        {access[0] === true && (<li className={findActive.Get}><Link to='/Get' className='link'>Find</Link></li>)}
+                        {access[1] === true && (<li className={findActive.Update}><Link to='/Update' className='link'>Update</Link></li>)}
+                        {access[1] === true && (<li className={findActive.Delete}><Link to='/Delete'className='link'>Delete</Link></li>)}
+  s                      <li><Link to='/' className='link' onClick={handleLogOut}>Log out</Link></li>
                     </ul>
                 </div>
             </nav>
