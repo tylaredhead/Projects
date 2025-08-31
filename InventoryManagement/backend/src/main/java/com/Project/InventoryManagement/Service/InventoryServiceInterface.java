@@ -5,7 +5,7 @@ import java.util.List;
 import com.Project.InventoryManagement.Entity.Product;
 import com.Project.InventoryManagement.Entity.Stock;
 import com.Project.InventoryManagement.Entity.Supplier;
-
+// update quantity to above 0
 public interface InventoryServiceInterface {
     public Stock saveStock(Stock stock); // Admin
     public List<Stock> getAllStock(); //Employee

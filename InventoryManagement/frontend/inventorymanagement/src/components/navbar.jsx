@@ -1,12 +1,13 @@
-import React from 'react';
+import React , { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
 import { LoginUser } from '../LoginUser.js';
 import './navbar.css';
 
 function Navbar(){
+    const [access, setAccess] = useState([true, false, false]);
     const handleLogOut = () => {
-        sessionStorage.removeItem('login');
+        localStorage.removeItem('login');
     }
 
     const location = useLocation();
@@ -16,19 +17,25 @@ function Navbar(){
         'Delete': (location.pathname === '/Delete') ? 'active' : ''
     };
 
+    //const access = [true, true, true];
 
     // [0] => Get page, [1] => Update page, [2] => Delete page
-    const access = [true, false, false]
-    const haveAccess = async (e) => {
-        const token = await LoginUser({
-            username: sessionStorage.getItem('login').username, 
-            password: sessionStorage.getItem('login').password
-        });
+    const login = JSON.parse(localStorage.getItem('login'));
+    useEffect(() => {
+        const haveAccess = async () => {
+            const token = await LoginUser({
+                username: login.username, 
+                password: login.password
+            });
 
-        if (token.role == 'admin' || token.role == 'employee') access[1] = true;
-        if (token.role == 'admin') access[2] = true;
-        // if location is update or delete)
-    }
+            if (token.role === 'admin') setAccess([true, true, true]);
+            else if (token.role === 'employee') setAccess([true, true, false]);
+            else setAccess([true, false, false]);
+        }; 
+        
+        haveAccess();
+    }, [login]);     
+    
     // need user auth
     // do cards for items and get to see them, with shoppping 
     // employee/ admin roles - get post, delete, register user account 
@@ -43,8 +50,8 @@ function Navbar(){
                     <ul className='nav-links'>
                         {access[0] === true && (<li className={findActive.Get}><Link to='/Get' className='link'>Find</Link></li>)}
                         {access[1] === true && (<li className={findActive.Update}><Link to='/Update' className='link'>Update</Link></li>)}
-                        {access[1] === true && (<li className={findActive.Delete}><Link to='/Delete'className='link'>Delete</Link></li>)}
-  s                      <li><Link to='/' className='link' onClick={handleLogOut}>Log out</Link></li>
+                        {access[2] === true && (<li className={findActive.Delete}><Link to='/Delete'className='link'>Delete</Link></li>)}
+                        <li className={'fixed'}><Link to='/' className='link' onClick={handleLogOut}>Log out</Link></li>
                     </ul>
                 </div>
             </nav>

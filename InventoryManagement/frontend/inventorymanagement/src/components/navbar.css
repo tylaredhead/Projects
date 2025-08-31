@@ -27,7 +27,7 @@ ul {
 }
 
 li {
-    float: left;
+    float:left;
     width: 25%;
     text-align: center;
 }
@@ -49,4 +49,8 @@ li {
     background-color: rgb(193, 225, 246);
     color: black;
     font-weight: bold;
+}
+
+.fixed {
+    float: right;
 }

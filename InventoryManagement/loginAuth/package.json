@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "encrypt-rsa": "^3.3.0",
+    "node-rsa": "^1.1.1"
+  }
+}

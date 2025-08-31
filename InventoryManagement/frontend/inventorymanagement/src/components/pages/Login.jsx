@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoginUser, encryptData } from '../../LoginUser.js';
 import './Login.css';
@@ -9,7 +9,6 @@ function Login() {
     const [password, setpassword] = useState("");
     const [invalidLogin, setinvalidLogin] = useState(false);
     const [showToggle, setshowToggle] = useState(false);
-    const [isLoading, setisLoading] = useState(false);
 
     const updateusername = (s) => {setusername(s.target.value);};
     const updatepassword = (s) => {setpassword(s.target.value);};
@@ -20,12 +19,11 @@ function Login() {
     const handleLoginAuth = async (e) => {
         e.preventDefault();
         try {
-            const data = encryptData({'username':username, password:password});
-            const token = await LoginUser(data);
-            if (token.role === 'admin') {
+            //const data = await encryptData({'username':username, password:password});
+            const token = await LoginUser({'username':username, 'password':password});
+            if (token.role === 'admin' || token.role === 'employee' || token.role === 'user') {
                 setinvalidLogin(false);
-            
-                sessionStorage.setItem('login', {username:username, password:password});
+                localStorage.setItem('login', JSON.stringify({username:username, password:password}));
                 navigate('/Get');
             } else setinvalidLogin(true);
         } catch (error) {
