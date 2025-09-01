@@ -25,14 +25,17 @@ app.post('/login', (req, res) => {
     return res.send({role: 'none'});
 });
 
-app.put('register', (req, res) => {
+app.put('/register', (req, res) => {
+    console.log("h");
     for (let i=0; i < users.length; i++) {
-        if (req.body.username === users[i].username && req.body.password == users[i].password) {
-            users = [...users, {username: req.body.newUsername, password: req.body.newPassword, role: 'req.body.role'}];
+        let match = compareHash(req.body.password, users[i].password);
+        if (req.body.username === users[i].username && match) {
+            users = [...users, {username: req.body.newUsername, password: createHash(req.body.newPassword), role: req.body.role}];
+            console.log(users);
         }
     }
 
-    return res.status(200).send('OK');
+    return res.status(200).send({msg:'OK'});
 })
 
 app.listen(8080, () => console.log('Hi'));

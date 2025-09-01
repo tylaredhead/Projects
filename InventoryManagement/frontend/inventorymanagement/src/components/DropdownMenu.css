@@ -1,15 +1,18 @@
 .dropdown{
     background-color: transparent;
     color: black;
+    width: 200px;
 }
 
 .button {
     width:100%;
+    text-overflow: ellipsis;
     background-color: darkgrey;
     color: black;
     text-align: center;
     border-radius: 3px;
     padding: 0px;
+
 }
 
 .button:hover, li:hover{
@@ -18,8 +21,11 @@
 }
 
 .dropdown-container{
-    width: 71%;
+    width: 100%;
     border-color: teal;
+    text-overflow: ellipsis;
+    display: inline-block;
+    transform: translateX(-17%);
 }
 
 .small {
@@ -37,10 +43,8 @@
     background-color: lightgrey;
     color: black;
     text-align: center;
-    width:95%;
+    width:100%;
     outline-color: black;
     outline-width: 1px;
     outline-style: solid;
-    transform: translateX(5%);
-
 }

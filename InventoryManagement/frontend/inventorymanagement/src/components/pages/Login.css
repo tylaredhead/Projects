@@ -13,9 +13,10 @@
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-input {
+input, .user-input {
     border-radius: 3px;
     padding: 10px;
     margin: 10px;
@@ -27,11 +28,15 @@ input {
     left: 10px;
 }
 
+.user-input {
+    border-color: black;
+}
+
 .password-input {
     width: 100%;
 }
 
-h1 {
+h2, h1{
     top: 0;
     text-align: center;
 }
@@ -45,7 +50,7 @@ button {
     margin:10px 0px 0px 0px;;
 }
 
-.button-events:hover {
+.button-events:hover, .user-input:hover {
     cursor: pointer;
     background-color: rgb(89, 88, 88);
     transition: transform 0.2s ease-out;
@@ -59,6 +64,12 @@ p {
 
 .error-msg {
     color:red;
+    font-size: small;
+    padding: 5px 0px 0px 0px;
+}
+
+.succ-msg {
+    color:green;
     font-size: small;
     padding: 5px 0px 0px 0px;
 }

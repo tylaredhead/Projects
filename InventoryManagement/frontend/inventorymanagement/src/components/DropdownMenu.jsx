@@ -1,35 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import './DropdownMenu.css';
-import { createWebSocketModuleRunnerTransport } from 'vite/module-runner';
 
 
 
-function DropdownMenu(props = {options:[]}){
+function DropdownMenu(props = {saveId:""}){
     const [showToggle, setshowToggle] = useState(false);
-    const [options, setOptions] = useState(props.options);
-    const [filteredOptions, setFilteredOptions] = useState(props.options);
     const [currTxt, setcurrTxt] = useState("Choose an option...");
-
+    const saveId = useRef(props.saveId);
 
     const handleToggle = () => {setshowToggle(!showToggle)};
     const updateTxt = (txt) => {
         setcurrTxt(txt);
+        props.getCurrTxt(txt);
         handleToggle();
     };
 
-    const menuSize = (filteredOptions.length < 3) ? 'large' : 'large';
-    
+    const menuSize = (props.options.length < 3) ? 'small' : 'large';
+    useEffect(() => {
+        sessionStorage.setItem(saveId.current, currTxt);
+    }, [currTxt]);
+
     return (
         <>
             <div className='dropdown'>
                 <button className='button' type='button' onClick={handleToggle}>{currTxt}</button>
-                {showToggle && 
+                {showToggle &&
                     <ul className={`dropdown-container ${menuSize}`}>
                         <li className='item' onClick={() => updateTxt("Choose an option...")}>Choose an option...</li>
                         { 
-                            filteredOptions.map((option) => {
-                                return <li className='item' onClick={() => updateTxt(option)}>{option}</li>
+                            props.options.map((option, i) => {
+                                return <li className='item' key={i} onClick={() => updateTxt(option)}>{option}</li>
                             })
                         }
                     </ul>
