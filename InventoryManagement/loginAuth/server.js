@@ -26,12 +26,10 @@ app.post('/login', (req, res) => {
 });
 
 app.put('/register', (req, res) => {
-    console.log("h");
     for (let i=0; i < users.length; i++) {
         let match = compareHash(req.body.password, users[i].password);
         if (req.body.username === users[i].username && match) {
             users = [...users, {username: req.body.newUsername, password: createHash(req.body.newPassword), role: req.body.role}];
-            console.log(users);
         }
     }
 

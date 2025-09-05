@@ -8,11 +8,17 @@ function Register() {
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
     const [role, setrole] = useState("");
-    const [error, seterror] = useState(false);
+    const [error, seterror] = useState(0);
     const [showToggle, setshowToggle] = useState(false);
 
-    const updateusername = (s) => {setusername(s.target.value);};
-    const updatepassword = (s) => {setpassword(s.target.value);};
+    const updateusername = (s) => {
+        setusername(s.target.value);
+        seterror(0);
+    };
+    const updatepassword = (s) => {
+        setpassword(s.target.value);
+        seterror(0);
+    };
     const handleToggle = () => {setshowToggle(!showToggle);};
 
     const login = JSON.parse(localStorage.getItem('login'));
@@ -20,22 +26,26 @@ function Register() {
     const handleRegisterAuth = async (e) => {
         e.preventDefault();
         try {
-            //const data = await encryptData({'username':username, password:password});
-            console.log(password);
-            const token = await RegisterUser({
-                'username':login.username,
-                'password':login.password, 
-                'newUsername':username, 
-                'newPassword':password,
-                'role':role
-            });
+            if (role === "Choose an option...") seterror(2);
+            else {
+                //const data = await encryptData({'username':username, password:password});
+                const token = await RegisterUser({
+                    'username':login.username,
+                    'password':login.password, 
+                    'newUsername':username, 
+                    'newPassword':password,
+                    'role':role
+                });
+                if (token.msg === 'OK') {
+                    seterror(1);
+                    setusername("");
+                    setpassword("");
+                    setrole("Choose an option...");
+                } else seterror(2);
 
-            console.log(token);
-
-            if (token.msg === 'OK') seterror(false);
-            else seterror(true);
+            }
         } catch (err) {
-            seterror(true);
+            seterror(2);
         }
     };
     // add so msg only show on submission for set time
@@ -46,7 +56,7 @@ function Register() {
 
                 <form onSubmit={handleRegisterAuth}>                 
                     <label for='username'>Username:</label>
-                    <input type='text' id='username' name='username' placeholder='Enter the username...' onChange={updateusername} required />
+                    <input type='text' id='username' name='username' placeholder='Enter the username...' onChange={updateusername} value={username} required />
                     <label for='password'>Password:</label>
                     <div className='password-container'>
                         <input className='password-input' 
@@ -55,6 +65,7 @@ function Register() {
                             name='password' 
                             placeholder='Enter your password...' 
                             onChange={updatepassword} 
+                            value={password}
                             required 
                         />
                         <img 
@@ -64,14 +75,22 @@ function Register() {
                         />
                     </div>
                     <label for='auth'>Authorisation level:</label>
-                    <DropdownMenu options={['admin', 'employee', 'user']} saveId='AuthToken' getCurrTxt={(txt) => setrole(txt)} className='user-input'/>
+                    <DropdownMenu 
+                        options={['admin', 'employee', 'user']} 
+                        value={role}
+                        className='user-input'
+                        getCurrTxt={(txt) => {
+                            setrole(txt);
+                            seterror(0);
+                        }} 
+                    />
                     <button className='button-events' type='submit'>Register</button>
                     
-                    { error && <p className = 'error-msg'>
+                    {(error === 2) && <p className = 'error-msg'>
                         This has been unsuccessful. Try again!
                     </p>}
-                    { !error && <p className = 'succ-msg'>
-                        This has been successful
+                    {(error === 1) && <p className = 'succ-msg'>
+                        This has been successful.
                     </p>}
                 </form>
             </div>

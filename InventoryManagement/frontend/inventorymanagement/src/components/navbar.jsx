@@ -13,7 +13,6 @@ function Navbar(){
     const location = useLocation();
     const findActive = {
         'Get': (location.pathname === '/Get') ? 'active' : '',
-        'Update': (location.pathname === '/Update') ? 'active' : '',
         'Register': (location.pathname === '/Register') ? 'active' : ''
     };
 
@@ -28,9 +27,8 @@ function Navbar(){
                 password: login.password
             });
 
-            if (token.role === 'admin') setAccess([true, true, true]);
-            else if (token.role === 'employee') setAccess([true, true, false]);
-            else setAccess([true, false, false]);
+            if (token.role === 'admin') setAccess([true, true]);
+            else setAccess([true, false]);
         }; 
         
         haveAccess();
@@ -49,8 +47,7 @@ function Navbar(){
                 <div className='navbar-container'>
                     <ul className='nav-links'>
                         {access[0] === true && (<li className={findActive.Get}><Link to='/Get' className='link'>Find</Link></li>)}
-                        {access[1] === true && (<li className={findActive.Update}><Link to='/Update' className='link'>Update</Link></li>)}
-                        {access[2] === true && (<li className={findActive.Register}><Link to='/Register'className='link'>Register</Link></li>)}
+                        {access[1] === true && (<li className={findActive.Register}><Link to='/Register'className='link'>Register</Link></li>)}
                         <li className={'fixed'}><Link to='/' className='link' onClick={handleLogOut}>Log out</Link></li>
                     </ul>
                 </div>

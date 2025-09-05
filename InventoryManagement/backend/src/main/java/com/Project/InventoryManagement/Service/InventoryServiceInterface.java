@@ -2,6 +2,7 @@ package com.Project.InventoryManagement.Service;
 
 import java.util.List;
 
+import com.Project.InventoryManagement.DTO.ProductDTO;
 import com.Project.InventoryManagement.Entity.Product;
 import com.Project.InventoryManagement.Entity.Stock;
 import com.Project.InventoryManagement.Entity.Supplier;
@@ -43,4 +44,9 @@ public interface InventoryServiceInterface {
     public Product updatePrice(int id, float price); // Admin
     public void deleteByProductId(int id); // Admin
     public void deleteByProductName(String name); //Admin
+
+    public ProductDTO getProductStockById(int id); 
+    public List<ProductDTO> getProductsStockByName(String name);
+    public List<ProductDTO> getProductsStockByType(String type);
+    public List<ProductDTO> getProductsStockByNameAndType(String name, String type);
 }

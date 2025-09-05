@@ -7,7 +7,6 @@ import './DropdownMenu.css';
 function DropdownMenu(props = {saveId:""}){
     const [showToggle, setshowToggle] = useState(false);
     const [currTxt, setcurrTxt] = useState("Choose an option...");
-    const saveId = useRef(props.saveId);
 
     const handleToggle = () => {setshowToggle(!showToggle)};
     const updateTxt = (txt) => {
@@ -16,10 +15,10 @@ function DropdownMenu(props = {saveId:""}){
         handleToggle();
     };
 
-    const menuSize = (props.options.length < 3) ? 'small' : 'large';
+    const menuSize = (props.options.length < 3) ? '' : 'large';
     useEffect(() => {
-        sessionStorage.setItem(saveId.current, currTxt);
-    }, [currTxt]);
+        if (props.value !== "") setcurrTxt(props.value);
+    }, [props.value]);
 
     return (
         <>

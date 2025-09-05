@@ -1,12 +1,19 @@
 package com.Project.InventoryManagement.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Project.InventoryManagement.Entity.*;
-import com.Project.InventoryManagement.Repository.*;
+import com.Project.InventoryManagement.DTO.ProductDTO;
+import com.Project.InventoryManagement.Entity.Product;
+import com.Project.InventoryManagement.Entity.Stock;
+import com.Project.InventoryManagement.Entity.Supplier;
+import com.Project.InventoryManagement.Repository.ProductRepository;
+import com.Project.InventoryManagement.Repository.ProductStockRepo;
+import com.Project.InventoryManagement.Repository.StockRepository;
+import com.Project.InventoryManagement.Repository.SupplierRepository;
 
 
 @Service
@@ -14,15 +21,18 @@ public class InventoryService implements InventoryServiceInterface{
     private final StockRepository stockRepo;
     private final SupplierRepository supplierRepo;
     private final ProductRepository productRepo;
+    private final ProductStockRepo productStockRepo;
 
     @Autowired
     public InventoryService(StockRepository stockRepo, 
                             SupplierRepository supplierRepo, 
-                            ProductRepository productRepo){
+                            ProductRepository productRepo,
+                            ProductStockRepo productStockRepo) {
 
         this.stockRepo = stockRepo;
         this.supplierRepo = supplierRepo;
         this.productRepo = productRepo;
+        this.productStockRepo = productStockRepo;
     }
 
     @Override
@@ -213,4 +223,68 @@ public class InventoryService implements InventoryServiceInterface{
     public void deleteByProductName(String name){
         productRepo.deleteByProductName(name);
     }
+
+    @Override
+    public ProductDTO getProductStockById(int id){
+        Object[] result = productStockRepo.findProductWithStockById(id);
+        
+        
+        return new ProductDTO(
+            (int) result[0],
+            (String) result[1],
+            (String) result[2],
+            (String) result[3],
+            (int) result[4],
+            (float) result[5],
+            (String) result[6]
+        );
+    }
+
+    @Override
+    public List<ProductDTO> getProductsStockByName(String name){
+        List<Object[]> results = productStockRepo.findProductsWithStockByName(name);
+        return results.stream()
+            .map(result -> new ProductDTO(
+            (int) result[0],
+            (String) result[1],
+            (String) result[2],
+            (String) result[3],
+            (int) result[4],
+            (float) result[5],
+            (String) result[6]
+        )).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductDTO> getProductsStockByType(String type){
+        List<Object[]> results = productStockRepo.findProductsWithStockByType(type);
+        return results.stream()
+            .map(result -> new ProductDTO(
+            (int) result[0],
+            (String) result[1],
+            (String) result[2],
+            (String) result[3],
+            (int) result[4],
+            (float) result[5],
+            (String) result[6]
+        )).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductDTO> getProductsStockByNameAndType(String name, String type){
+        List<Object[]> results = productStockRepo.findProductsWithStockByNameAndType(name, type);
+        return results.stream()
+            .map(result -> new ProductDTO(
+            (int) result[0],
+            (String) result[1],
+            (String) result[2],
+            (String) result[3],
+            (int) result[4],
+            (float) result[5],
+            (String) result[6]
+        )).collect(Collectors.toList());
+    }
+
+
+    // easier to do selection in the controller?
 }

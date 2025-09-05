@@ -25,58 +25,58 @@ public class AdminRestController extends EmployeeRestController{
         super(inventoryService);
     }
 
-    @PostMapping
+    @PostMapping("/save/stock")
     public ResponseEntity<Stock> saveStock(@RequestBody Stock stock){
         stock = inventoryService.saveStock(stock);
         return ResponseEntity.ok(stock); 
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/product/id")
     public void deleteById(@PathVariable int id){
         inventoryService.deleteById(id);
     }
 
-    @PostMapping
+    @PostMapping("/save/supplier")
     public ResponseEntity<Supplier> saveSupplier(@RequestBody Supplier supplier){
         supplier = inventoryService.saveSupplier(supplier);
         return ResponseEntity.ok(supplier);
     }
 
-    @PostMapping("/{name}")
+    @PostMapping("/post/supplier/name")
     public ResponseEntity<Supplier> updateSupplierName(@PathVariable int id, @PathVariable String name){
         Supplier supplier = inventoryService.updateSupplierName(id, name);
         return (supplier != null) ? ResponseEntity.ok(supplier) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-    @PostMapping("/{no}")
+    @PostMapping("/post/supplier/no")
     public ResponseEntity<Supplier> updateSupplierNo(@PathVariable int id, @PathVariable String no){
         Supplier supplier = inventoryService.updateSupplierNo(id, no);
         return (supplier != null) ? ResponseEntity.ok(supplier) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-    @PostMapping("/{email}")
+    @PostMapping("/post/supplier/email")
     public ResponseEntity<Supplier> updateSupplierEmail(@PathVariable int id, @PathVariable String email){
         Supplier supplier = inventoryService.updateSupplierEmail(id, email);
         return (supplier != null) ? ResponseEntity.ok(supplier) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/product/supplierId")
     public void deleteBySupplierId(@PathVariable int id){
         inventoryService.deleteBySupplierId(id);
     }
 
-    @DeleteMapping("/{name}")
+    @DeleteMapping("/delete/supplier/name")
     public void deleteBySupplierName(@PathVariable String name){
         inventoryService.deleteBySupplierName(name);
     }
 
-    @PostMapping
+    @PostMapping("save/product")
     public ResponseEntity<Product> saveProduct(@RequestBody Product product){
         product = inventoryService.saveProduct(product);
         return ResponseEntity.ok(product);
     }
 
-    @PutMapping("/name")
+    @PutMapping("/put/product/name")
     public ResponseEntity<Product> updateProductName(@PathVariable int id, @PathVariable String name){
         Product product = inventoryService.updateProductName(id, name);
         return (product != null) ? ResponseEntity.ok(product) : ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
