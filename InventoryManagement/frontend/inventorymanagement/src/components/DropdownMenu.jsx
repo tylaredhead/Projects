@@ -1,29 +1,28 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './DropdownMenu.css';
 
 
 
-function DropdownMenu(props = {saveId:""}){
+function DropdownMenu(props = {value: "", options: []}){
     const [showToggle, setshowToggle] = useState(false);
-    const [currTxt, setcurrTxt] = useState("Choose an option...");
 
     const handleToggle = () => {setshowToggle(!showToggle)};
     const updateTxt = (txt) => {
-        setcurrTxt(txt);
         props.getCurrTxt(txt);
         handleToggle();
     };
 
     const menuSize = (props.options.length < 3) ? '' : 'large';
     useEffect(() => {
-        if (props.value !== "") setcurrTxt(props.value);
+        if (props.value !== "") props.getCurrTxt(props.value);
+        else props.getCurrTxt("Choose an option...");
     }, [props.value]);
 
     return (
         <>
             <div className='dropdown'>
-                <button className='button' type='button' onClick={handleToggle}>{currTxt}</button>
+                <button className='button' type='button' onClick={handleToggle}>{props.value}</button>
                 {showToggle &&
                     <ul className={`dropdown-container ${menuSize}`}>
                         <li className='item' onClick={() => updateTxt("Choose an option...")}>Choose an option...</li>

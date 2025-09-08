@@ -1,13 +1,17 @@
 package com.Project.InventoryManagement.Entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
 public class Stock {
     @Id
+    @Column(name="productId", unique=true)
     private int id;
+    @Column(name="rating")
     private String rating;
+    @Column(name="quantity")
     private int quantity;
     
     public Stock(){}

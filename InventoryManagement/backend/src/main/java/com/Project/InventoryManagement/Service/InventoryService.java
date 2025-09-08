@@ -95,8 +95,8 @@ public class InventoryService implements InventoryServiceInterface{
     }
 
     @Override
-    public Supplier findBySupplierId(int id){
-        return supplierRepo.findById(id);
+    public List<Supplier> findBySupplierId(int id){
+        return supplierRepo.findBySupplierId(id);
     }
 
     @Override
@@ -115,29 +115,38 @@ public class InventoryService implements InventoryServiceInterface{
     }
 
     @Override
-    public Supplier updateSupplierName(int id, String name){
-        Supplier supplier= supplierRepo.findById(id);
-        supplier.setSupplierName(name);
-        return supplierRepo.save(supplier);
+    public List<Supplier> updateSupplierName(int id, String name){
+        List<Supplier> suppliers = supplierRepo.findBySupplierId(id);
+        for (Supplier s: suppliers) {
+            s.setSupplierName(name);
+            supplierRepo.save(s);
+        }
+        return suppliers;
     }
 
     @Override
-    public Supplier updateSupplierNo(int id, String no){
-        Supplier supplier= supplierRepo.findById(id);
-        supplier.setSupplierNo(no);
-        return supplierRepo.save(supplier);
+    public List<Supplier> updateSupplierNo(int id, String no){
+        List<Supplier> suppliers = supplierRepo.findBySupplierId(id);
+        for (Supplier s: suppliers) {
+            s.setSupplierNo(no);
+            supplierRepo.save(s);
+        }
+        return suppliers;
     }
 
     @Override
-    public Supplier updateSupplierEmail(int id, String email){
-        Supplier supplier= supplierRepo.findById(id);
-        supplier.setSupplierEmail(email);
-        return supplierRepo.save(supplier);
+    public List<Supplier> updateSupplierEmail(int id, String email){
+        List<Supplier> suppliers = supplierRepo.findBySupplierId(id);
+        for (Supplier s: suppliers) {
+            s.setSupplierEmail(email);
+            supplierRepo.save(s);
+        }
+        return suppliers;
     }
 
     @Override
     public void deleteBySupplierId(int id){
-        supplierRepo.deleteById(id);
+        supplierRepo.deleteBySupplierId(id);
     }
 
     @Override
@@ -225,11 +234,11 @@ public class InventoryService implements InventoryServiceInterface{
     }
 
     @Override
-    public ProductDTO getProductStockById(int id){
-        Object[] result = productStockRepo.findProductWithStockById(id);
+    public List<ProductDTO> getProductStockById(int id){
+        List<Object[]> results = productStockRepo.findProductWithStockById(id);
         
-        
-        return new ProductDTO(
+        return results.stream()
+            .map(result -> new ProductDTO(
             (int) result[0],
             (String) result[1],
             (String) result[2],
@@ -237,7 +246,7 @@ public class InventoryService implements InventoryServiceInterface{
             (int) result[4],
             (float) result[5],
             (String) result[6]
-        );
+        )).collect(Collectors.toList());
     }
 
     @Override
@@ -283,6 +292,28 @@ public class InventoryService implements InventoryServiceInterface{
             (float) result[5],
             (String) result[6]
         )).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductDTO> getAllProductStock(){
+        List<Object[]> res = productStockRepo.findAllProductsWithStock();
+        return res.stream()
+            .map(result -> new ProductDTO(
+            (int) result[0],
+            (String) result[1],
+            (String) result[2],
+            (String) result[3],
+            (int) result[4],
+            (float) result[5],
+            (String) result[6]
+        )).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Supplier> getSuppliers(int id, String name){
+        if (id != -1) return supplierRepo.findBySupplierId(id);
+        else if (name != "") return supplierRepo.findBySupplierName(name);
+        else return null;
     }
 
 

@@ -1,13 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { LoginUser } from '../../LoginUser.js';
 import './Form.css';
 
 import DropdownMenu from '../DropdownMenu.jsx';
-import { updateInfo } from '../../BackendAPI.jsx';
+import { updateInfo, getInfo, deleteInfo } from '../../BackendAPI.jsx';
 
 export default function Get() {
-    const location = useLocation();
     // id name  
     const login = JSON.parse(localStorage.getItem('login'));
     const [tblOptions, settblOptions] = useState([]);
@@ -15,13 +13,54 @@ export default function Get() {
     const [option, setoption] = useState("");
     const [cmdoption, setcmdoption] = useState("");
 
-    const [tableInfo, settableInfo] = useState({id:null, name:"", type:""});
+    const [tableInfo, settableInfo] = useState({id:"", name:"", type:""});
     const [updateField, setupdateField] = useState({field:"", value:""});
+    const [data, setdata] = useState([]);
 
-    const handleQuery = (e) => {
+    const handleQuery = async (e) => {
         e.preventDefault();
+        const login = JSON.parse(localStorage.getItem('login'));
+        const information = {};
+        const token = await LoginUser({
+            username: login.username,
+            password: login.password
+        });
+        if (option === "Supplier"){
+            information.urlInfo = '/' + token.role + '/supplier/';
+            information.data = tableInfo;
+        } else if (option === "Product"){
+            information.urlInfo = '/' + token.role + '/product/';
+            information.data = tableInfo;
+        } else {
+            alert("Please select a valid table from the dropdown menu");
+            return;
+        }
 
-        settableInfo({});
+        if (tableInfo.id === "" && tableInfo.name === "" && tableInfo.type === "") {
+            if (cmdoption === "Get") information.urlInfo += 'all';
+            else {
+                alert("Select a valid query type from the dropdown menu");
+                return;
+            }
+        } else if (cmdoption === "Get") information.urlInfo += 'get';
+        else if (cmdoption === "Delete") information.urlInfo += 'delete';
+        else if (cmdoption === "Update") {
+            information.urlInfo += 'update';
+            information.data = {...information.data, ...updateField};
+        } else {
+            alert("Select a valid query type from the dropdown menu");
+            return;
+        }
+        
+        let res;
+        if (cmdoption === "Get") res = await getInfo(information);
+        else if (cmdoption === "Update") res = await updateInfo(information);
+        else res = await deleteInfo(information);
+        if (res !== undefined && cmdoption === "Get") setdata(res);
+        else if (res !== undefined) alert("Update successful");
+        else setdata([]);
+        settableInfo({id:"", name:"", type:""});
+        setupdateField({...updateField, field:"", value:""});
     }
 
     useEffect(() => {
@@ -67,7 +106,7 @@ export default function Get() {
                     getCurrTxt = {(txt) => { setcmdoption(txt); }}
                 />
             </div>
-            <form onClick={handleQuery}>
+            <form onSubmit={handleQuery}>
                 {(option === 'Product') && (
                     <div className='form'>
                         <div className='input-container'>
@@ -181,6 +220,29 @@ export default function Get() {
                 )}
                 {(option === "Supplier" || option ==='Product') && <button className='button-events' type='submit'>Submit</button>}
             </form>
+
+            {data !== undefined && data !== null && data.length > 0 && 
+                <div className='table-container'>
+                    <table>
+                        <thead>
+                            <tr>
+                                {Object.keys(data[0]).map((header) => (
+                                    <th key={header}>{header.charAt(0).toUpperCase() + header.slice(1).toLowerCase()}</th>
+                                ))}                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            { data.map((row, idx) => (
+                                <tr key={idx}>
+                                    {Object.values(row).map((header, i) => (
+                                        <td key={i}>{header}</td>
+                                    ))}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            }
         </div>
     );
 }

@@ -39,6 +39,39 @@ label {
     
 }
 
+.table-container {
+    display: grid;
+    flex-direction: column;
+    overflow:clip;
+    overflow-y: auto;
+    max-height: 400px;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid lightgrey;
+}
+
+th {
+    color:black;
+    background-color: darkgrey;
+    border: 1px solid lightgrey;
+    font-weight:bold;
+}
+
+td {
+    color: lightblue;
+    background-color: transparent;
+    border: 1px solid lightgrey;
+}
+
+tr:hover, tr:hover td{
+    cursor: pointer;
+    color: black;
+    background-color: lightgrey;
+    transform: scale(1.05);
+    transition: transform 0.2s ease-out;
+    border: 1px solid black;
+}
 
 p {
     text-align: center;
@@ -47,7 +80,7 @@ p {
 button {
     float: center;
     padding: 10px;
-    margin:10px 0px 0px 0px;;
+    margin:10px 0px 0px 0px;
 }
 
 .button-events:hover {

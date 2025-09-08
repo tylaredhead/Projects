@@ -12,39 +12,45 @@ import com.Project.InventoryManagement.Entity.Product;
 
 
 @Repository
-public interface  ProductStockRepo extends JpaRepository<Product, Long> {
-    
+public interface  ProductStockRepo extends JpaRepository<Product, Integer>{
     @Query(value="""
-    SELECT p.id, p.name, p.description, p.type, s.quantity, p.price, s.rating 
+    SELECT p.productID, p.productName, p.productDesc, p.productType, s.quantity, p.price, s.rating 
     FROM Product p 
-    JOIN Stock s ON p.id = s.id
-    WHERE p.id = :id
+    JOIN Stock s ON p.productID = s.productID
+    WHERE p.productID = :id
     """, nativeQuery = true)
-    Object[] findProductWithStockById(@Param("id") int id);
+    List<Object[]> findProductWithStockById(@Param("id") int id);
 
     @Query(value="""
-    SELECT p.id, p.name, p.description, p.type, s.quantity, p.price, s.rating 
+    SELECT p.productID, p.productName, p.productDesc, p.productType, s.quantity, p.price, s.rating 
     FROM Product p 
-    JOIN Stock s ON p.id = s.id
-    WHERE p.name = :name"""
+    JOIN Stock s ON p.productID = s.productID
+    WHERE p.productName = :name"""
     , nativeQuery = true)
     List<Object[]> findProductsWithStockByName(@Param("name") String name);
 
     @Query(value="""
-    SELECT p.id, p.name, p.description, p.type, s.quantity, p.price, s.rating 
+    SELECT p.productID, p.productName, p.productDesc, p.productType, s.quantity, p.price, s.rating 
     FROM Product p 
-    JOIN Stock s ON p.id = s.id
-    WHERE p.type = :type"""
+    JOIN Stock s ON p.productID = s.productID
+    WHERE p.productType = :type"""
     , nativeQuery = true)
     List<Object[]> findProductsWithStockByType(@Param("type") String type);
 
     @Query(value="""
-        SELECT p.id, p.name, p.description, p.type, s.quantity, p.price, s.rating
-        FROM Product p
-        JOIN Stock s ON p.id = s.id
-        WHERE p.name = :name AND p.type = :type
-        """, nativeQuery=true)
+    SELECT p.productID, p.productName, p.productDesc, p.productType, s.quantity, p.price, s.rating 
+    FROM Product p 
+    JOIN Stock s ON p.productID = s.productID
+    WHERE p.productName = :name AND p.productType = :type
+    """, nativeQuery=true)
     List<Object[]> findProductsWithStockByNameAndType(@Param("name") String name, @Param("type") String type);
+
+    @Query(value="""
+        SELECT p.productID, p.productName, p.productDesc, p.productType, s.quantity, p.price, s.rating 
+        FROM Product p
+        JOIN Stock s ON p.productID = s.productID
+        """, nativeQuery = true)
+    List<Object[]> findAllProductsWithStock();
 
 
 }

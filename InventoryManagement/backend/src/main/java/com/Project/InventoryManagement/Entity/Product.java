@@ -11,12 +11,17 @@ import jakarta.persistence.Id;
 public class Product {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(unique=true)
+    @Column(name="productId", unique=true)
     private int productId;
+    @Column(name="productName")
     private String productName;
+    @Column(name="productDesc")
     private String productDesc;
+    @Column(name="productType")
     private String productType;
+    @Column(name="supplierId")
     private int supplierId;
+    @Column(name="price")
     private float price;
 
     public Product(){}

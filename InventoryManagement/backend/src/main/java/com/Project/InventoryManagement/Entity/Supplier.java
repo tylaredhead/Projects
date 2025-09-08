@@ -10,10 +10,13 @@ import jakarta.persistence.Id;
 public class Supplier {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(unique=true)
+    @Column(name="supplierId", unique=true)
     private int supplierId;
+    @Column(name="supplierName")
     private String supplierName;
+    @Column(name="supplierNo")
     private String supplierNo;
+    @Column(name="supplierEmail")
     private String supplierEmail;
 
     public Supplier(){}

@@ -20,13 +20,14 @@ public interface InventoryServiceInterface {
 
     public Supplier saveSupplier(Supplier supplier); // Admin
     public List<Supplier> getAllSuppliers(); // Employee
-    public Supplier findBySupplierId(int id); // Employee
+    public List<Supplier> findBySupplierId(int id); // Employee
     public List<Supplier> findBySupplierName(String name); // Employee
     public List<Supplier> findBySupplierNo(String no); // Employee
     public List<Supplier> findBySupplierEmail(String email); // Employee
-    public Supplier updateSupplierName(int id, String name); // Admin
-    public Supplier updateSupplierNo(int id, String no); // Admin
-    public Supplier updateSupplierEmail(int id, String email); // Admin
+    public List<Supplier> updateSupplierName(int id, String name); // Admin
+    public List<Supplier> updateSupplierNo(int id, String no); // Admin
+    public List<Supplier> updateSupplierEmail(int id, String email); // Admin
+    
     public void deleteBySupplierId(int id); // Admin
     public void deleteBySupplierName(String name); // Admin
 
@@ -45,7 +46,9 @@ public interface InventoryServiceInterface {
     public void deleteByProductId(int id); // Admin
     public void deleteByProductName(String name); //Admin
 
-    public ProductDTO getProductStockById(int id); 
+    public List<Supplier> getSuppliers(int id, String name);
+    public List<ProductDTO> getAllProductStock();
+    public List<ProductDTO> getProductStockById(int id); 
     public List<ProductDTO> getProductsStockByName(String name);
     public List<ProductDTO> getProductsStockByType(String type);
     public List<ProductDTO> getProductsStockByNameAndType(String name, String type);
