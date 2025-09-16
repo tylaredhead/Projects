@@ -51,19 +51,19 @@ public class AdminRestController extends EmployeeRestController{
         if (id != -1) {
             inventoryService.deleteByProductId(id);
             inventoryService.deleteById(id);
-        } else if (name != "" && type != "") {
+        } else if (!name.equals("") && !type.equals("")) {
             productDTO = inventoryService.getProductsStockByNameAndType(name, type);
             for (ProductDTO p: productDTO){
                 inventoryService.deleteByProductId(p.getId());
                 inventoryService.deleteById(p.getId());
             }
-        } else if (name != "") {
+        } else if (!name.equals("")) {
             productDTO = inventoryService.getProductsStockByName(name);
             for (ProductDTO p: productDTO){
                 inventoryService.deleteByProductId(p.getId());
                 inventoryService.deleteById(p.getId());
             }
-        } else if (type != "") {
+        } else if (!type.equals("")) {
             productDTO = inventoryService.getProductsStockByType(type);
             for (ProductDTO p: productDTO){
                 inventoryService.deleteByProductId(p.getId());
@@ -140,8 +140,8 @@ public class AdminRestController extends EmployeeRestController{
         } else if (type != "") {
             productDTO = inventoryService.getProductsStockByType(type);
         } else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+
         for (ProductDTO p: productDTO) {
-            System.out.println(field);
             if (field.equals("Name")) inventoryService.updateProductName(p.getId(), value);
             else if (field.equals("Type")) inventoryService.updateProductType(p.getId(), value);
             else if (field.equals("Price")) inventoryService.updatePrice(p.getId(), Float.parseFloat(value));

@@ -63,5 +63,3 @@ Other future features include:
 4. Deepened own knowledge on a range of data structures and algorithms such as queues and DFS, concepts of OOP and the pygame framework. 
 
 <img src="Program-GraphBuilding.png" alt="An image showing the graph being built" style="width:45%; height:auto;">  <img src="Program-Full.png" alt="n image showing the maximum flows and minimum cuts" style="width:45%; height:auto;" class="center">
-
-Does this focus on main features of the project? Does this focus on challenges and then how I overcome them

@@ -5,8 +5,8 @@ import './Form.css';
 import DropdownMenu from '../DropdownMenu.jsx';
 import { updateInfo, getInfo, deleteInfo } from '../../BackendAPI.jsx';
 
+// need to add create
 export default function Get() {
-    // id name  
     const login = JSON.parse(localStorage.getItem('login'));
     const [tblOptions, settblOptions] = useState([]);
     const [commandOptions, setCommandOptions] = useState([]);
