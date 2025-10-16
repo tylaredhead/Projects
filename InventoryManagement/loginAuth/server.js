@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 
 import { createHash, compareHash } from './handleHash.js';
-//import { decrypt } from './decrypt.js';
 
 const app = express();
 
